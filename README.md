@@ -1,6 +1,4 @@
-# Project Title
-
-Short description or overview of the project.
+# Portfolio
 
 ## Table of Contents
 
@@ -18,23 +16,40 @@ Short description or overview of the project.
 
 ## About
 
-Provide a more detailed description of your project. What is its purpose? What problems does it solve?
+Portfolio is a personal website project developed using HTML, CSS, and JavaScript. It serves as a showcase of your skills, projects, and experiences. The purpose of the portfolio is to provide visitors with an overview of your work and qualifications.
 
 ## Features
-
-List the key features or functionalities of your project.
+Responsive design: Ensures optimal viewing experience across devices.
+Customizable layout: Easily modify the appearance and content to reflect your style and achievements.
+Project Showcase: Display your projects with descriptions, screenshots, and links to live demos or source code repositories.
+Resume/CV section: Include a downloadable resume or CV to provide additional information about your background and skills.
+Contact form: Allow visitors to get in touch with you directly through a contact form.
 
 ## Getting Started
 
-Provide instructions on how to get started with your project. Include information on prerequisites, installation steps, and any other setup necessary for users to run your project locally.
+First, install Pycharm(professional) and create a project as a portfolio
 
 ### Prerequisites
 
-List any software or libraries that users need to have installed before they can use your project.
+Text editor (e.g., Visual Studio Code, Pycharm)
+Web browser (e.g., Google Chrome, Safari)
 
 ### Installation
 
-Provide step-by-step instructions on how to install your project. Include any configuration steps that may be required.
+Clone the repository:
+
+bash
+
+git clone https://github.com/yourusername/portfolio.git
+
+Navigate to the project directory:
+
+bash
+cd portfolio
+
+Open the index.html file in your web browser to view the portfolio locally.
+
+
 
 ## Usage
 
