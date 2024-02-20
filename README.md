@@ -1,13 +1,13 @@
-# Portfolio 👨‍💻
+### Portfolio 👨‍💻
 
-## About ℹ️
+### About ℹ️
 
 ---
 
 Portfolio is a personal website project developed using HTML, CSS, and JavaScript. It serves as a showcase of your skills, projects, and experiences. The purpose of the portfolio is to provide visitors with an overview of your work and qualifications.
 
 
-## Features 🚀
+### Features 🚀
 
 ---
 
@@ -17,7 +17,7 @@ Portfolio is a personal website project developed using HTML, CSS, and JavaScrip
 - Resume/CV section: Include a downloadable resume or CV to provide additional information about your background and skills.
 - Contact form: Allow visitors to get in touch with you directly through a contact form.
 
-## Getting Started 🛠️
+### Getting Started 🛠️
 
 ### Prerequisites
 
