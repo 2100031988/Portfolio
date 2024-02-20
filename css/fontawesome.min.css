@@ -1,0 +1,16 @@
+/* Example of adding custom styles */
+.container {
+    max-width: 1200px; /* Limit container width */
+    margin: 0 auto; /* Center container horizontally */
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow to cards */
+    transition: box-shadow 0.3s ease; /* Smooth transition for box shadow */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Change box shadow on hover */
+}
+
+/* Add more custom styles here */
