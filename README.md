@@ -17,12 +17,12 @@ Portfolio is a personal website project developed using HTML, CSS, and JavaScrip
 
 ## Getting Started 🛠️
 
-## Prerequisites
+### Prerequisites
 
 - Text editor (e.g., Visual Studio Code, Sublime Text)
 - Web browser (e.g., Google Chrome, Mozilla Firefox)
 
-## Installation
+### Installation
 
 1. **Clone the repository:**
    ```bash
