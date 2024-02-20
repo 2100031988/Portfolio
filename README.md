@@ -45,6 +45,7 @@ Contributions to the Portfolio project are welcome! If you have suggestions for 
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Acknowledgements 🙏
+### Acknowledgments 🙏
+
 The development of this portfolio was inspired by the need for an online platform to showcase skills and projects.
 Special thanks to the online developer community for providing valuable resources, tutorials, and guidance in web development.
