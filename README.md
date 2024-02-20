@@ -30,6 +30,7 @@ Portfolio is a personal website project developed using HTML, CSS, and JavaScrip
    cd portfolio
 
 3. **Open the index.html file in your web browser to view the portfolio locally.**
+   
     This markdown code formats the `git clone` command in a box to distinguish it as a terminal command, similar to how it appears on GitHub. Adjust the `yourusername` placeholder with your actual GitHub username.
 
 ## Usage
