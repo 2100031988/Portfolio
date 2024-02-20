@@ -22,12 +22,15 @@ Portfolio is a personal website project developed using HTML, CSS, and JavaScrip
 ### Installation
 
 1. **Clone the repository:**
-git clone https://github.com/yourusername/portfolio.git
-
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
+   
 2. **Navigate to the project directory:**
-cd portfolio
+   ```bash
+   cd portfolio
 
-3. **Open the `index.html` file in your web browser to view the portfolio locally.**
+3. **Open the index.html file in your web browser to view the portfolio locally.**
+    This markdown code formats the `git clone` command in a box to distinguish it as a terminal command, similar to how it appears on GitHub. Adjust the `yourusername` placeholder with your actual GitHub username.
 
 ## Usage
 
