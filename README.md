@@ -32,13 +32,14 @@ Portfolio is a personal website project developed using HTML, CSS, and JavaScrip
 3. **Open the 'index.html' file in your web browser to view the portfolio locally.**
    
     This markdown code formats the `git clone` command in a box to distinguish it as a terminal command, similar to how it appears on GitHub. Adjust the `yourusername` placeholder with your actual GitHub username.
-Usage 📝
+   
+### Usage 📝
 Once the portfolio is set up, you can customize it to showcase your projects, skills, and experiences. Modify the HTML, CSS, and JavaScript files to update the content and styling according to your preferences. You can also add new sections or features to tailor the portfolio to your needs.
 
-Contributing 🤝
+### Contributing 🤝
 Contributions to the Portfolio project are welcome! If you have suggestions for improvements or new features, please fork the repository, make your changes, and submit a pull request. For major changes, please open an issue first to discuss potential updates or improvements.
 
-License 📄
+### License 📄
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Acknowledgements 🙏
