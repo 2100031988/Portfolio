@@ -1,458 +1,1052 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabyasachi Kumar - Portfolio</title>
-    <link rel="icon" href="img/sabya_123_18q_icon.ico" type="image/x-icon">
-    <!-- Import Google Sans font -->
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <!-- Favicon image -->
-            <img src="img/sabya_123_18q_icon.ico" alt="Favicon" style="width: 24px; height: 24px;">
-            Portfolio
-        </a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <style></style>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#skills">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#project">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact Me</a>
-                </li>
-            </ul>
-        </div>
-        <div class="ml-auto">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.linkedin.com/in/sabyasachi-kumar-5a423b226/"><i class="fab fa-linkedin"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/2100031988"><i class="fab fa-github"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.instagram.com/sabya.pvt/"><i class="fab fa-instagram"></i></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+        <link rel="stylesheet" href="style.css">
 
-    <section id="about-me" >
-    <div class="vg-page page-about" id="about">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-4 py-3" style="margin-right: -30px;" data-aos="zoom-in-down" data-aos-duration="1000"> <!-- Adjust the margin-right as needed -->
-                    <img src="img/Screenshot%202023-08-09%20at%207.51.04%20AM%20(1).png" class="img-fluid rounded shadow-lg" style="max-width: 110%;" alt="">
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+        <title>Sabyasachi Kumar - Portfolio</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Portfolio</a>
                 </div>
 
+               <div class="nav__menu" id="nav-menu">
+    <ul class="nav__list">
+        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+        <li class="nav__item"><a href="#work" class="nav__link">Project</a></li>
+        <li class="nav__item"><a href="#work" class="nav__link">Achievements</a></li>
+        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
 
-                <div class="col-lg-6 offset-lg-1 wow fadeInRight" data-aos="zoom-in-left" data-aos-duration="1000">
-
-                    <h1 class="fw-bold text-primary mb-3">Hello, I'm Sabyasachi Kumar</h1>
-                    <h5 class="text-success mb-3"><span id="typed"></span></h5>
-<!--                    <h5 class="text-success mb-3">Passionate Learner & Tech Enthusiast</h5>-->
-                    <p class="lead mb-4">I am passionate about exploring and pushing the boundaries of technology. With a solid background in web development, including expertise in HTML, CSS, and JavaScript, I am eager to tackle exciting projects and make valuable contributions to the tech industry.</p>
-
-                    <ul class="theme-list mb-4">
-                        <li><b>Location:</b> Hyderabad</li>
-                        <li><b>Currently Residing In:</b> Vijayawada, India</li>
-                        <li><b>Age:</b> 20</li>
-                        <li><b>Gender:</b> Male</li>
-                    </ul>
-
-
-                    <div data-aos="zoom-out-down" data-aos-duration="1000">
-
-
-  <a href="https://drive.google.com/file/d/11E44DVylFIhgH6mgbQxUijJG4HyZ0r3f/view?usp=drive_link" download="sabya_resume1.pdf">
-    <button class="custom-button">
-      <i class="fas fa-download" style="margin-right: 5px;"></i> Download Resume
-    </button>
-  </a>
-
-  <button class="custom-button" onclick="openEmail()">
-    <i class="fas fa-user-tie" style="margin-right: 5px;"></i> Hire Me
-  </button>
-</div>
-
-
-<div class="sidebar float-end" >
-  <div class="sidebar-icon">
-    <i class="fas fa-bars"></i>
-  </div>
-  <div class="sidebar-content">
-    <h4>Categories</h4>
-    <ul>
-      <li>
-          <span>Education:</span>
-          <ol>
-              <li>Bachelor's Degree in Computer Science, KL University</li>
-          </ol>
-      </li>
-        <li>
-        <span>Certifications:</span>
-        <ol>
-          <li>Red Hat Certified Enterprise Application Developer</li>
-          <li>Python Certified Advanced Programmer</li>
-            <li>Business English Certificate Preliminary</li>
-            <li>Oracle Cloud Foundations Associate</li>
-
-        </ol>
-      </li>
-        <li>
-          <span>Work Experience:</span>
-          <ol>
-              <li>Intern at Bharat Intern for web-developer</li>
-          </ol>
-            <ol>
-              <li>Intern provided by AICTE for AI-ML</li>
-          </ol>
-      </li>
+        <!-- Adding social media icons to the navbar -->
+        <li class="nav__item">
+            <a href="https://www.linkedin.com/in/sabyasachi-kumar-5a423b226/" class="nav__link">
+                <i class='bx bxl-linkedin'></i>
+            </a>
+        </li>
+        <li class="nav__item">
+            <a href="https://github.com/2100031988" class="nav__link">
+                <i class='bx bxl-github'></i>
+            </a>
+        </li>
+        <li class="nav__item">
+            <a href="mailto:sabyasachikumar2@gmail.com" class="nav__link">
+                <img src="img1/gmail.svg" style="height: 24px; width: 24px;">
+            </a>
+        </li>
     </ul>
-  </div>
 </div>
 
 
-</div>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
                 </div>
+            </nav>
+        </header>
+
+
+        <main class="l-main">
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+
+                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Sabyasachi</span><br>
+                        <span id="typed" class="typewriter"></span>
+                    </h1>
+                    <a href="https://drive.google.com/uc?export=download&id=1DQ4xXiXfuum4wG9PER0dIIVSw3j6zBHQ" id="download-button" class="button">Download Resume</a>
+
+                    <a href="https://wa.me/9325066036" class=" button" target="_blank">Contact on  <i class='logos--whatsapp-icon'></i></a>
+                    <div id="progress-container" style="display: none;">
+                        <p>Downloading... <span id="progress-text">0%</span></p>
+                        <progress id="progress-bar" value="0" max="100"></progress>
+                    </div>
+                </div>
+
+                <div class="home__img">
+                    <svg class="home__blob" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <image class="home__blob-img" x="20" y="60" style="height: 870px; width:600px;" href="img1/circle_pic.png"/>
+
+                    </svg>
+                </div>
+
+
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about">
+                <h2 class="section-title">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="img1/WhatsApp%20Image%202024-09-18%20at%2018.37.00.jpeg" style="height: 370px; width: 370px; margin-right: 100px" alt="">
+                    </div>
+
+                    <div>
+                        <p class="about__text" style="margin-left: -50px">
+                            I am currently pursuing a Bachelor's degree in Computer Science and Engineering with specialization in Artificial Intelligence at KL University. I am deeply passionate about learning new technologies, particularly those related to machine learning and AI.<br><br>
+
+                            I have strong programming skills in Python and Java and have developed several projects aligned with my specialization. Additionally, I have a keen interest in web development and possess substantial knowledge of frameworks and tools such as Spring Boot, Pandas and Tensorflow<br><br>
+
+                            My strong communication skills and effective problem-solving techniques help me stand out in my field. I am always eager to expand my knowledge and stay updated with the latest advancements in the industry.
+                        </p>
+
+                    </div>
+                </div>
+            </section>
+
+            <!--===== SKILLS =====-->
+            <!-- Add necessary icon libraries in the <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
+
+<section class="skills section" id="skills">
+    <h2 class="section-title">Skills</h2>
+    <h2 class="skills__subtitle disp__txt__center" style="margin-right: 700px">Programming Languages </h2>
+
+    <div class="skills__container bd-grid">
+        <!-- Left Half -->
+        <div>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class='bx bxl-html5 skills__icon'></i>
+                    <span class="skills__name">HTML</span>
+                </div>
+                <div class="skills__bar skills__html"></div>
+            </div>
+
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class='bx bxl-css3 skills__icon'></i>
+                    <span class="skills__name">CSS</span>
+                </div>
+                <div class="skills__bar skills__css"></div>
+            </div>
+
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class='bx bxl-javascript skills__icon'></i>
+                    <span class="skills__name">JavaScript</span>
+                </div>
+                <div class="skills__bar skills__js"></div>
             </div>
         </div>
+
+        <!-- Right Half -->
+        <div>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class='fab fa-python skills__icon'></i>
+                    <span class="skills__name">Python</span>
+                </div>
+                <div class="skills__bar skills__html"></div>
+            </div>
+
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class='devicon-java-plain skills__icon'></i>
+                    <span class="skills__name">Java</span>
+                </div>
+                <div class="skills__bar skills__css"></div>
+            </div>
+
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class='fas fa-database skills__icon'></i>
+                    <span class="skills__name">SQL</span>
+                </div>
+                <div class="skills__bar skills__js"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Section for Frameworks and Libraries -->
+    <style>
+    .skills__container {
+        display: grid;
+        grid-template-columns: 500px 500px;  /* Fixed width columns */
+
+        gap: 30px; /* Space between columns */
+    }
+
+    .skills__data {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+        margin-bottom: 20px;
+    }
+
+    .skills__names {
+        display: flex;
+        align-items: center;
+    }
+
+    .skills__icon {
+        width: 50px;  /* Standardize icon size */
+        height: 50px;
+        margin-right: 15px;
+        object-fit: contain; /* Ensures that images and icons fit the allocated space without distortion */
+    }
+
+    .skills__icon img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain; /* Ensures image icons scale properly */
+    }
+
+    .skills__name {
+        font-size: 20px; /* Font size for skill name */
+        font-weight: bold;
+    }
+
+    .skills__bar {
+        width: 100%;
+        height: 7px; /* Skill bar height */
+        background-color: #007BFF;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    .skills__bar.skills__html {
+        background-color: #E44D26;
+    }
+
+    .skills__bar.skills__css {
+        background-color: #264de4;
+    }
+
+    .skills__bar.skills__js {
+        background-color: #F7E018;
+    }
+</style>
+
+<section class="skills section" id="skills">
+    <h2 class="skills__subtitle disp__txt__center" style="margin-right: 700px">Framework and Libraries </h2>
+
+    <div class="skills__container">
+        <!-- Left Half for Frameworks -->
+        <div>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class='devicon-spring-plain skills__icon'></i>
+                    <span class="skills__name">Spring Boot</span>
+                </div>
+                <div class="skills__bar skills__html"></div>
+            </div>
+
+            <div class="skills__data">
+                <div class="skills__names">
+<!--                    <img src="img1/jsp.png" alt="JSP Icon" class="skills__icon">-->
+                    <i class='devicon-java-plain skills__icon'></i>
+                    <span class="skills__name">Jakarta Server Pages</span>
+                </div>
+                <div class="skills__bar skills__css"></div>
+            </div>
+
+            <div class="skills__data">
+                <div class="skills__names">
+                    <img src="img1/jdbc.png" alt="JDBC Icon" class="skills__icon">
+                    <span class="skills__name">Java Database Connectivity</span>
+                </div>
+                <div class="skills__bar skills__js"></div>
+            </div>
+        </div>
+
+        <!-- Right Half for Libraries -->
+        <div>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class='devicon-tensorflow-original skills__icon'></i>
+                    <span class="skills__name">TensorFlow</span>
+                </div>
+                <div class="skills__bar skills__html"></div>
+            </div>
+
+            <div class="skills__data">
+                <div class="skills__names">
+                    <img src="img1/pandas.png" alt="Pandas Icon" class="skills__icon">
+                    <span class="skills__name">Pandas</span>
+                </div>
+                <div class="skills__bar skills__css"></div>
+            </div>
+
+            <div class="skills__data">
+                <div class="skills__names">
+                    <img src="img1/numpy.png" alt="NumPy Icon" class="skills__icon">
+                    <span class="skills__name">NumPy</span>
+                </div>
+                <div class="skills__bar skills__js"></div>
+            </div>
+        </div>
+    </div>
+<section class="skills section" id="skills">
+    <h2 class="skills__subtitle disp__txt__center" style="margin-right: 900px">Core Skills </h2>
+    <div class="skills__container">
+        <div>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <img src="img1/dsa.png" alt="Data Structures Icon" class="skills__icon">
+                    <span class="skills__name">Data Structures</span>
+                </div>
+                <div class="skills__bar skills__html"></div>
+            </div>
+
+            <div class="skills__data">
+                <div class="skills__names">
+                    <img src="img1/ml.png" alt="Machine Learning Icon" class="skills__icon">
+                    <span class="skills__name">Machine Learning</span>
+                </div>
+                <div class="skills__bar skills__css"></div>
+            </div>
+
+            <div class="skills__data">
+                <div class="skills__names">
+                    <img src="img1/dl.png" alt="Deep Learning Icon" class="skills__icon">
+                    <span class="skills__name">Deep Learning</span>
+                </div>
+                <div class="skills__bar skills__js"></div>
+            </div>
+        </div>
+
+        <div>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <img src="img1/nlp.png" alt="NLP Icon" class="skills__icon">
+                    <span class="skills__name">Natural Language Processing</span>
+                </div>
+                <div class="skills__bar skills__html"></div>
+            </div>
+
+            <div class="skills__data">
+                <div class="skills__names">
+                   <img src="img1/vision.png" alt="Vision Icon" class="skills__icon">
+                    <span class="skills__name">Computer Vision</span>
+                </div>
+                <div class="skills__bar skills__css"></div>
+            </div>
+
+            <div class="skills__data">
+                <div class="skills__names">
+                    <img src="img1/genai.jpg" alt="Gen AI Icon" class="skills__icon">
+                    <span class="skills__name">Generative AI</span>
+                </div>
+                <div class="skills__bar skills__js"></div>
+            </div>
+        </div>
+    </div>
+
 </section>
 
 
 
 
 
-
-<!-- SKILLS -->
-   <section id="skills" data-aos="fade-down" data-aos-duration="3000">
+<!--===== PROJECTS SECTION =====-->
+<section id="project" class="projects section" data-aos="fade-down" data-aos-duration="1000">
+    <h2 class="section-title">Projects</h2>
     <div class="container">
-    <div class="row">
-      <div class="col-12"><br><br>
-        <h2 class="text-center mb-4" style="font-size: 48px; font-weight: bold; ">SKILLS</h2><br><br>
-
-    <!-- Programming Languages -->
-    <div class="col-md-12 mb-4" data-aos="zoom-in">
-  <div class="skill-category">
-    <h3 class="category-title">Programming Expertise</h3>
-    <div class="row">
-      <!-- Card for Java -->
-      <div class="col-md-3  mb-3" >
-        <div class="card programming-box" style="background-color: #FFD700; border: 2px solid #000; border-radius: 10px;">
-          <div class="card-body">
-            <i class="fab fa-java" style="font-size: 48px; color: #000;"></i>
-            <h5 class="card-title" style="color: #000;">Java</h5>
-            <span class="progress-label" style="color: #000; background-color: #FFD700; border-radius: 5px; padding: 2px 6px;">Advanced</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card for Python -->
-      <div class="col-md-3 mb-3">
-        <div class="card programming-box" style="background-color: #2E8B57; border: 2px solid #000; border-radius: 10px;">
-          <div class="card-body">
-            <i class="fab fa-python" style="font-size: 48px; color: #000;"></i>
-            <h5 class="card-title" style="color: #000;">Python</h5>
-            <span class="progress-label" style="color: #000; background-color: #2E8B57; border-radius: 5px; padding: 2px 6px;">Intermediate</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card for Data Structures -->
-      <div class="col-md-3 mb-3">
-        <div class="card programming-box" style="background-color: #FF4500; border: 2px solid #000; border-radius: 10px;">
-          <div class="card-body">
-            <i class="fas fa-cubes" style="font-size: 48px; color: #000;"></i>
-            <h5 class="card-title" style="color: #000;">Data Structures</h5>
-            <span class="progress-label" style="color: #000; background-color: #FF4500; border-radius: 5px; padding: 2px 6px;">Intermediate</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card for JavaScript -->
-      <div class="col-md-3 mb-3">
-        <div class="card programming-box" style="background-color: #9370DB; border: 2px solid #000; border-radius: 10px;">
-          <div class="card-body">
-            <i class="fab fa-js" style="font-size: 48px; color: #000;"></i>
-            <h5 class="card-title" style="color: #000;">JavaScript</h5>
-            <span class="progress-label" style="color: #000; background-color: #9370DB; border-radius: 5px; padding: 2px 6px;">Intermediate</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-</div>
-
-
-           <div class="col-md-12 mb-4" data-aos="zoom-in">
-  <div class="skill-category">
-    <h3 class="category-title">Web Development Frameworks</h3>
-    <div class="row">
-      <!-- Box for JSP -->
-      <div class="col-md-3 mb-3">
-        <div class="card web-dev-box" style="background-color: #FF6384; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
-          <div class="card-body">
-            <h5 class="card-title">JSP</h5>
-            <div class="progress-bar">
-              <div class="progress" style="width: 80%; background-color: #FF6384;"></div>
-            </div>
-            <span class="progress-label">80%</span>
-          </div>
-        </div>
-      </div>
-      <!-- Box for HTML5 and CSS -->
-      <div class="col-md-3 mb-3">
-        <div class="card web-dev-box" style="background-color: #36A2EB; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
-          <div class="card-body">
-            <h5 class="card-title">HTML5 and CSS</h5>
-            <div class="progress-bar">
-              <div class="progress" style="width: 90%; background-color: #36A2EB;"></div>
-            </div>
-            <span class="progress-label">90%</span>
-          </div>
-        </div>
-      </div>
-      <!-- Box for React -->
-      <div class="col-md-3 mb-3">
-        <div class="card web-dev-box" style="background-color: #FFCE56; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
-          <div class="card-body">
-            <h5 class="card-title">React</h5>
-            <div class="progress-bar">
-              <div class="progress" style="width: 75%; background-color: #FFCE56;"></div>
-            </div>
-            <span class="progress-label">75%</span>
-          </div>
-        </div>
-      </div>
-      <!-- Box for Bootstrap -->
-      <div class="col-md-3 mb-3">
-        <div class="card web-dev-box" style="background-color: #4BC0C0; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
-          <div class="card-body">
-            <h5 class="card-title">Bootstrap</h5>
-            <div class="progress-bar">
-              <div class="progress" style="width: 85%; background-color: #4BC0C0;"></div>
-            </div>
-            <span class="progress-label">85%</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-            <!-- Frameworks & Libraries -->
-           <div class="col-md-12 mb-4" data-aos="zoom-in">
-    <div class="skill-category ai-category">
-        <h3 class="category-title">Specialized in Artificial Intelligence</h3>
         <div class="row">
+            <!-- Left Column: Project 1 -->
+            <div class="col-md-5 mb-3">
+                <div class="card project-card">
+                    <a href="https://github.com/2100031988/Portfolio" target="_blank">
+                        <img class="card-img-top project-img" src="img/portfolio1.jpeg" alt="Portfolio Project Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Project Portfolio Administration</h5>
+                            <p class="card-text">Developed a system for managing </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
-            <!-- Card for Deep Learning -->
-            <div class="col-md-3 mb-3">
-  <div class="card ai-card" style="background-color: #FF4500; border: 20px solid pink; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-    <div class="card-body d-flex flex-column justify-content-between" style="height: 100%; border: none;">
-      <i class="fas fa-brain" style="font-size: 48px; color: #FFD700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);"></i>
-      <h5 class="card-title" style="color: green; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-top: 1px;">Deep Learning</h5>
-      <p class="card-text" style="color: black; margin-top: 10px;"></p>
-      <span class="progress-label align-self-end" style="color: #fff; background-color: #FF4500; border-radius: 5px; padding: 2px 6px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); margin-bottom: 10px;">Intermediate</span>
-<!--      <a href="#" class="card-button align-self-end" style="background-color: #FFD700; color: #FF4500; border: none; border-radius: 4px; padding: 8px 16px; text-decoration: none; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease; margin-bottom: 15px;"></a>-->
-    </div>
-  </div>
-</div>
+            <!-- Right Column: Project 2 -->
+            <div class="col-md-5 mb-3">
+                <div class="card project-card">
+                    <a href="https://github.com/2100031988/hand_gesture_using_deeplearning" target="_blank">
+                        <img class="card-img-top project-img" src="img/gesture223.jpeg" alt="Hand Gesture Project Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Hand Gesture Identification</h5>
+                            <p class="card-text">Developed a system for managing</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
-            <div class="col-md-3 mb-3">
-  <div class="card ai-card" style="background-color: #FF4500; border: 20px solid pink; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-    <div class="card-body d-flex flex-column justify-content-between" style="height: 100%; border: none;">
-      <i class="fas fa-language" style="font-size: 48px; color: #FFD700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);"></i>
-      <h5 class="card-title" style="color: green; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-top: 15px;">Natural Language Processing</h5>
-      <p class="card-text" style="color: black; margin-top: 10px;"></p>
-      <span class="progress-label align-self-end" style="color: #fff; background-color: #FF4500; border-radius: 5px; padding: 2px 6px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); margin-bottom: 10px;">Intermediate</span>
-<!--      <a href="#" class="card-button align-self-end" style="background-color: #FFD700; color: #FF4500; border: none; border-radius: 4px; padding: 8px 16px; text-decoration: none; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease; margin-bottom: 15px;"></a>-->
-    </div>
-  </div>
-</div>
-
-<div class="col-md-3 mb-3">
-  <div class="card ai-card" style="background-color: #FF4500; border: 20px solid pink; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-    <div class="card-body d-flex flex-column justify-content-between" style="height: 100%; border: none;">
-      <i class="fas fa-brain" style="font-size: 48px; color: #FFD700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);"></i>
-      <h5 class="card-title" style="color: green; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-top: 15px;">Artificial Neural Networks</h5>
-      <p class="card-text" style="color: black; margin-top: 10px;"></p>
-      <span class="progress-label align-self-end" style="color: #fff; background-color: #FF4500; border-radius: 5px; padding: 2px 6px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); margin-bottom: 10px;">Advanced</span>
-<!--      <a href="#" class="card-button align-self-end" style="background-color: #FFD700; color: #FF4500; border: none; border-radius: 4px; padding: 8px 16px; text-decoration: none; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease; margin-bottom: 15px;"></a>-->
-    </div>
-  </div>
-</div>
-
-<div class="col-md-3 mb-3">
-  <div class="card ai-card" style="background-color: #FF4500; border: 20px solid pink; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-    <div class="card-body d-flex flex-column justify-content-between" style="height: 100%; border: none;">
-      <i class="fas fa-cogs" style="font-size: 58px; color: #FFD700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);"></i>
-      <h5 class="card-title" style="color: green; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-top: 15px;">Machine Learning</h5>
-      <p class="card-text" style="color: black; margin-top: 10px;"></p>
-      <span class="progress-label align-self-end" style="color: #fff; background-color: #FF4500; border-radius: 5px; padding: 2px 6px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); margin-bottom: 10px;">Intermediate</span>
-<!--      <a href="#" class="card-button align-self-end" style="background-color: #FFD700; color: #FF4500; border: none; border-radius: 4px; padding: 8px 16px; text-decoration: none; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease; margin-bottom: 15px;"></a>-->
-    </div>
-  </div>
-</div>
-        </div>
-    </div>
-           </div>
-    </div>
-    </div>
-   </section>
-
-
-
-
-
-<section id="project" data-aos="fade-down" data-aos-duration="1000" >
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center mt-2">
-                 <h2 class="text-center mt-5" style="font-size: 48px; font-weight: bold; ">PROJECTS</h2><br><br>
+            <!-- Project 3 -->
+            <div class="col-md-5 mb-3">
+                <div class="card project-card">
+                    <a href="https://github.com/2100031988/Electricity-biling-system-using-JFSD" target="_blank">
+                        <img class="card-img-top project-img" src="img/BILL.jpeg" alt="Billing Project Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Electricity Utility Management</h5>
+                            <p class="card-text">Developed a system for managing </p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="row justify-content-center" >
-            <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000">
-                <div class="card">
-    <a href="https://github.com/2100031988/Portfolio" target="_blank">
-        <img class="card-img-top" src="img/portfolio1.jpeg" alt="Card image cap">
-        <div class="card-body" >
-            <h5 class="card-title" >Project Portfolio Administration</h5>
-            <p class="card-text">Developed a system for managing project portfolios efficiently.</p>
-        </div>
-    </a>
-</div>
-            </div>
-            <div class="col-md-4 mb-4" data-aos="fade-down"data-aos-duration="1000">
-    <div class="card">
-        <a href="https://github.com/2100031988/hand_gesture_using_deeplearning" target="_blank">
-            <img class="card-img-top" src="img/gesture223.jpeg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Hand Gesture Identification</h5>
-                <p class="card-text">Implemented a deep learning model to recognize hand gestures accurately using deep learning techniques</p>
-            </div>
-        </a>
-    </div>
-</div>
-            <div class="col-md-4 mb-4" data-aos="fade-up-right" data-aos-duration="1000">
-    <div class="card">
-        <a href="https://github.com/2100031988/Electricity-biling-system-using-JFSD" target="_blank">
-            <img class="card-img-top" src="img/BILL.jpeg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Electricity Utility Management</h5>
-                <p class="card-text">Created an efficient system for managing electricity billing processes.</p>
-            </div>
-        </a>
-    </div>
-</div>
 
-            <div class="col-md-4 mb-4" data-aos="fade-left"data-aos-duration="1000">
-    <div class="card">
-        <a href="#">
-            <img class="card-img-top" src="img/netflic.jpeg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">On-Demand Video Platform</h5>
-                <p class="card-text">Developed a clone of Netflix with user authentication, movie browsing, and streaming features.</p>
+        <!-- Row for more projects -->
+        <div class="row">
+            <!-- Project 4 -->
+            <div class="col-md-5 mb-3">
+                <div class="card project-card">
+                    <a href="#">
+                        <img class="card-img-top project-img" src="img/netflic.jpeg" alt="Netflix Clone Image">
+                        <div class="card-body">
+                            <h5 class="card-title">On-Demand Video Platform</h5>
+                            <p class="card-text">Developed a Netflix clone with.</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </a>
-    </div>
-</div>
-<div class="col-md-4 mb-4" data-aos="fade-up-right" data-aos-duration="1000">
-    <div class="card">
-        <a href="https://github.com/2100031988/weather_app">
-            <img class="card-img-top" src="img/weather.webp" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Meteorological Application</h5>
-                <p class="card-text">Created a weather application with real-time weather data and forecasts based on user location or search input.</p>
-            </div>
-        </a>
-    </div>
-</div>
 
+            <!-- Project 5 -->
+            <div class="col-md-5 mb-3">
+                <div class="card project-card">
+                    <a href="https://github.com/2100031988/Car-Rental-System" target="_blank">
+                        <img class="card-img-top project-img" src="img1/carrental.jpg" alt="Car Rental Project Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Vehicle Rental Service Platform</h5>
+                            <p class="card-text">Developed a system for.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="col-md-5 mb-3">
+                <div class="card project-card">
+                    <a href="https://github.com/2100031988/weather_app" target="_blank">
+                        <img class="card-img-top project-img" src="img/weather.webp" alt="Weather App Project Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Meteorological Application</h5>
+                            <p class="card-text">Developed a weather application </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<section id="contact" class="gradient-background" data-aos="zoom-out-up" data-aos-duration="1000">
+
+
+            <!-- Certifications and Achievements Section -->
+<section class="work section" id="work">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <h2 class="text-center mb-4">Contact Me</h2>
-        <form id="contactForm" method="post" action="contact.php">
-          <div class="form-group">
-            <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Your Name" required>
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Your Email" required>
-          </div>
-          <div class="form-group">
-            <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="Your Phone Number">
-          </div>
-          <div class="form-group">
-            <label for="description"></label>
-            <textarea class="form-control form-control-lg" id="description" name="message" rows="6" placeholder="Your Message" required></textarea>
-            <small class="text-muted">Max 700 characters</small>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message</button>
-        </form>
+    <h2 class="section-title">Certifications and Achievements</h2>
+
+    <div class="achievements-grid">
+      <div class="achievement-item">
+        <h3 class="achievement-title">Certified Python Associate Programmer</h3>
+        <p class="achievement-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum.</p>
+        <span class="achievement-date">March 2024</span>
+      </div>
+
+      <div class="achievement-item">
+        <h3 class="achievement-title">Awarded Fintech Council Member of India </h3>
+        <p class="achievement-description">Etiam vitae turpis varius, eleifend ex et, interdum purus. Suspendisse potenti.</p>
+        <span class="achievement-date">July 2024</span>
+      </div>
+
+      <div class="achievement-item">
+        <h3 class="achievement-title">Certified Tensorflow Developer</h3>
+        <p class="achievement-description">Vivamus lacinia facilisis libero, nec vestibulum nibh auctor nec.</p>
+        <span class="achievement-date">March 2023</span>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- Confirmation message notification -->
-<div id="confirmationMessage" class="alert alert-success fixed-top w-100 text-center" style="display: none;">
-    Thanks for your feedback! We will contact you soon.
-</div>
 
 
-<!-- JavaScript -->
-    <footer class="bg-dark text-white text-center py-3">
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Contact</h2>
 
-        <div class="text-center"><br>
-                    <p>&copy; 2024 Sabyasachi Kumar. All Rights Reserved.</p>
-                    <p>Email: sabyasachikumar2@gmail.com</p>
-                    <p>Phone: +918978992483</p>
+                <div class="contact__container bd-grid">
+                    <form action="" class="contact__form">
+                        <input type="text" placeholder="Name" class="contact__input">
+                        <input type="mail" placeholder="Email" class="contact__input">
+                        <textarea name="" placeholder="Type Mesaage.." cols="0" rows="10" class="contact__input"></textarea>
+                        <input type="button" value="Send" class="contact__button button">
+                    </form>
                 </div>
-    </footer>
+            </section>
+        </main>
+
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Sabyasachi Kumar</p>
+            <div class="footer__social">
+                <p>© Sabyasachi Kumar 2024. All Rights Reserved </p>
+                </div>
 
 
 
-<!-- Bootstrap and jQuery -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="script.js" defer></script>
-<script>
-  AOS.init();
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-</body>
+        </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <script>
+        var typed = new Typed('#typed', {
+            strings: ["Passionate Learner", "Tech Enthusiast", "Developer", "Problem Solver"],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true
+        });
+        </script>
+
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Sabyasachi Kumar - Portfolio</title>-->
+<!--    <link rel="icon" href="img/sabya_123_18q_icon.ico" type="image/x-icon">-->
+<!--    &lt;!&ndash; Import Google Sans font &ndash;&gt;-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">-->
+<!--    &lt;!&ndash; Font Awesome for icons &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
+<!--    &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">-->
+<!--    &lt;!&ndash; Custom CSS &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="style.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+<!--    <div class="container">-->
+<!--        <a class="navbar-brand" href="#">-->
+<!--            &lt;!&ndash; Favicon image &ndash;&gt;-->
+<!--            <img src="img/sabya_123_18q_icon.ico" alt="Favicon" style="width: 24px; height: 24px;">-->
+<!--            Portfolio-->
+<!--        </a>-->
+
+<!--        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <style></style>-->
+<!--        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">-->
+<!--            <ul class="navbar-nav">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#about">About</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#skills">Skills</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#project">Projects</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#contact">Contact Me</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        <div class="ml-auto">-->
+<!--            <ul class="navbar-nav">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="https://www.linkedin.com/in/sabyasachi-kumar-5a423b226/"><i class="fab fa-linkedin"></i></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="https://github.com/2100031988"><i class="fab fa-github"></i></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="https://www.instagram.com/sabya_kumar/"><i class="fab fa-instagram"></i></a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<!--    <section id="about-me" >-->
+<!--    <div class="vg-page page-about" id="about">-->
+<!--        <div class="container py-5">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-4 py-3" style="margin-right: -30px;" data-aos="zoom-in-down" data-aos-duration="1000"> &lt;!&ndash; Adjust the margin-right as needed &ndash;&gt;-->
+<!--                    <img src="img/Screenshot%202023-08-09%20at%207.51.04%20AM%20(1).png" class="img-fluid rounded shadow-lg" style="max-width: 110%;" alt="">-->
+<!--                </div>-->
+
+
+<!--                <div class="col-lg-6 offset-lg-1 wow fadeInRight" data-aos="zoom-in-left" data-aos-duration="1000">-->
+
+<!--                    <h1 class="fw-bold text-primary mb-3">Hello, I'm Sabyasachi Kumar</h1>-->
+<!--                    <h5 class="text-success mb-3"><span id="typed"></span></h5>-->
+<!--                  <h5 class="text-success mb-3">Passionate Learner & Tech Enthusiast</h5>-->
+<!--                    <p class="lead mb-4"> I am deeply passionate about learning new technologies, particularly those related to machine learning and AI.-->
+<!--                        I have strong programming skills in Python and Java, and I have developed several projects in line with my-->
+<!--                        specialization. Additionally, I have a keen interest in web development and possess substantial knowledge of-->
+<!--                        frameworks and tools such as Spring Boot, tensorflow and Pandas.</p>-->
+
+<!--                    <ul class="theme-list mb-4">-->
+<!--                        <li><b>Location:</b> Hyderabad, India</li>-->
+<!--                        <li><b>Currently Residing In:</b> Vijayawada, India</li>-->
+<!--                        <li><b>Age:</b> 20</li>-->
+<!--                        <li><b>Gender:</b> Male</li>-->
+<!--                    </ul>-->
+
+
+<!--                    <div data-aos="zoom-out-down" data-aos-duration="1000">-->
+
+
+<!--  <a href="https://drive.google.com/file/d/11E44DVylFIhgH6mgbQxUijJG4HyZ0r3f/view?usp=drive_link" download="sabya_resume1.pdf">-->
+<!--    <button class="custom-button">-->
+<!--      <i class="fas fa-download" style="margin-right: 5px;"></i> Download Resume-->
+<!--    </button>-->
+<!--  </a>-->
+
+<!--  <button class="custom-button" onclick="openEmail()">-->
+<!--    <i class="fas fa-user-tie" style="margin-right: 5px;"></i> Hire Me-->
+<!--  </button>-->
+<!--</div>-->
+
+
+<!--<div class="sidebar float-end" >-->
+<!--  <div class="sidebar-icon">-->
+<!--    <i class="fas fa-bars"></i>-->
+<!--  </div>-->
+<!--  <div class="sidebar-content">-->
+<!--    <h4>Categories</h4>-->
+<!--    <ul>-->
+<!--      <li>-->
+<!--          <span>Education:</span>-->
+<!--          <ol>-->
+<!--              <li>Bachelor's Degree in Computer Science, KL University</li>-->
+<!--          </ol>-->
+<!--      </li>-->
+<!--        <li>-->
+<!--        <span>Certifications:</span>-->
+<!--        <ol>-->
+<!--          <li>Red Hat Certified Enterprise Application Developer</li>-->
+<!--          <li>Python Certified Advanced Programmer</li>-->
+<!--            <li>Business English Certificate Preliminary</li>-->
+<!--            <li>Oracle Cloud Foundations Associate</li>-->
+
+<!--        </ol>-->
+<!--      </li>-->
+<!--        <li>-->
+<!--          <span>Work Experience:</span>-->
+<!--          <ol>-->
+<!--              <li>Intern at Bharat Intern for web-developer</li>-->
+<!--          </ol>-->
+<!--            <ol>-->
+<!--              <li>Intern provided by AICTE for AI-ML</li>-->
+<!--          </ol>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--</section>-->
+
+
+
+
+
+
+<!--&lt;!&ndash; SKILLS &ndash;&gt;-->
+<!--   <section id="skills" data-aos="fade-down" data-aos-duration="3000">-->
+<!--    <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-12"><br><br>-->
+<!--        <h2 class="text-center mb-4" style="font-size: 48px; font-weight: bold; ">SKILLS</h2><br><br>-->
+
+<!--    &lt;!&ndash; Programming Languages &ndash;&gt;-->
+<!--    <div class="col-md-12 mb-4" data-aos="zoom-in">-->
+<!--  <div class="skill-category">-->
+<!--    <h3 class="category-title">Programming Expertise</h3>-->
+<!--    <div class="row">-->
+<!--      &lt;!&ndash; Card for Java &ndash;&gt;-->
+<!--      <div class="col-md-3  mb-3" >-->
+<!--        <div class="card programming-box" style="background-color: #FFD700; border: 2px solid #000; border-radius: 10px;">-->
+<!--          <div class="card-body">-->
+<!--            <i class="fab fa-java" style="font-size: 48px; color: #000;"></i>-->
+<!--            <h5 class="card-title" style="color: #000;">Java</h5>-->
+<!--            <span class="progress-label" style="color: #000; background-color: #FFD700; border-radius: 5px; padding: 2px 6px;">Advanced</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; Card for Python &ndash;&gt;-->
+<!--      <div class="col-md-3 mb-3">-->
+<!--        <div class="card programming-box" style="background-color: #2E8B57; border: 2px solid #000; border-radius: 10px;">-->
+<!--          <div class="card-body">-->
+<!--            <i class="fab fa-python" style="font-size: 48px; color: #000;"></i>-->
+<!--            <h5 class="card-title" style="color: #000;">Python</h5>-->
+<!--            <span class="progress-label" style="color: #000; background-color: #2E8B57; border-radius: 5px; padding: 2px 6px;">Intermediate</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; Card for Data Structures &ndash;&gt;-->
+<!--      <div class="col-md-3 mb-3">-->
+<!--        <div class="card programming-box" style="background-color: #FF4500; border: 2px solid #000; border-radius: 10px;">-->
+<!--          <div class="card-body">-->
+<!--            <i class="fas fa-cubes" style="font-size: 48px; color: #000;"></i>-->
+<!--            <h5 class="card-title" style="color: #000;">Data Structures</h5>-->
+<!--            <span class="progress-label" style="color: #000; background-color: #FF4500; border-radius: 5px; padding: 2px 6px;">Intermediate</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; Card for JavaScript &ndash;&gt;-->
+<!--      <div class="col-md-3 mb-3">-->
+<!--        <div class="card programming-box" style="background-color: #9370DB; border: 2px solid #000; border-radius: 10px;">-->
+<!--          <div class="card-body">-->
+<!--            <i class="fab fa-js" style="font-size: 48px; color: #000;"></i>-->
+<!--            <h5 class="card-title" style="color: #000;">JavaScript</h5>-->
+<!--            <span class="progress-label" style="color: #000; background-color: #9370DB; border-radius: 5px; padding: 2px 6px;">Intermediate</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--</div>-->
+
+
+<!--           <div class="col-md-12 mb-4" data-aos="zoom-in">-->
+<!--  <div class="skill-category">-->
+<!--    <h3 class="category-title">Web Development Frameworks</h3>-->
+<!--    <div class="row">-->
+<!--      &lt;!&ndash; Box for JSP &ndash;&gt;-->
+<!--      <div class="col-md-3 mb-3">-->
+<!--        <div class="card web-dev-box" style="background-color: #FF6384; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">JSP</h5>-->
+<!--            <div class="progress-bar">-->
+<!--              <div class="progress" style="width: 80%; background-color: #FF6384;"></div>-->
+<!--            </div>-->
+<!--            <span class="progress-label">80%</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; Box for HTML5 and CSS &ndash;&gt;-->
+<!--      <div class="col-md-3 mb-3">-->
+<!--        <div class="card web-dev-box" style="background-color: #36A2EB; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">HTML5 and CSS</h5>-->
+<!--            <div class="progress-bar">-->
+<!--              <div class="progress" style="width: 90%; background-color: #36A2EB;"></div>-->
+<!--            </div>-->
+<!--            <span class="progress-label">90%</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; Box for React &ndash;&gt;-->
+<!--      <div class="col-md-3 mb-3">-->
+<!--        <div class="card web-dev-box" style="background-color: #FFCE56; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">React</h5>-->
+<!--            <div class="progress-bar">-->
+<!--              <div class="progress" style="width: 75%; background-color: #FFCE56;"></div>-->
+<!--            </div>-->
+<!--            <span class="progress-label">75%</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; Box for Bootstrap &ndash;&gt;-->
+<!--      <div class="col-md-3 mb-3">-->
+<!--        <div class="card web-dev-box" style="background-color: #4BC0C0; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">Bootstrap</h5>-->
+<!--            <div class="progress-bar">-->
+<!--              <div class="progress" style="width: 85%; background-color: #4BC0C0;"></div>-->
+<!--            </div>-->
+<!--            <span class="progress-label">85%</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--            &lt;!&ndash; Frameworks & Libraries &ndash;&gt;-->
+<!--           <div class="col-md-12 mb-4" data-aos="zoom-in">-->
+<!--    <div class="skill-category ai-category">-->
+<!--        <h3 class="category-title">Specialized in Artificial Intelligence</h3>-->
+<!--        <div class="row">-->
+
+<!--            &lt;!&ndash; Card for Deep Learning &ndash;&gt;-->
+<!--            <div class="col-md-3 mb-3">-->
+<!--  <div class="card ai-card" style="background-color: #FF4500; border: 20px solid pink; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">-->
+<!--    <div class="card-body d-flex flex-column justify-content-between" style="height: 100%; border: none;">-->
+<!--      <i class="fas fa-brain" style="font-size: 48px; color: #FFD700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);"></i>-->
+<!--      <h5 class="card-title" style="color: green; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-top: 1px;">Deep Learning</h5>-->
+<!--      <p class="card-text" style="color: black; margin-top: 10px;"></p>-->
+<!--      <span class="progress-label align-self-end" style="color: #fff; background-color: #FF4500; border-radius: 5px; padding: 2px 6px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); margin-bottom: 10px;">Intermediate</span>-->
+<!--&lt;!&ndash;      <a href="#" class="card-button align-self-end" style="background-color: #FFD700; color: #FF4500; border: none; border-radius: 4px; padding: 8px 16px; text-decoration: none; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease; margin-bottom: 15px;"></a>&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--            <div class="col-md-3 mb-3">-->
+<!--  <div class="card ai-card" style="background-color: #FF4500; border: 20px solid pink; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">-->
+<!--    <div class="card-body d-flex flex-column justify-content-between" style="height: 100%; border: none;">-->
+<!--      <i class="fas fa-language" style="font-size: 48px; color: #FFD700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);"></i>-->
+<!--      <h5 class="card-title" style="color: green; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-top: 15px;">Natural Language Processing</h5>-->
+<!--      <p class="card-text" style="color: black; margin-top: 10px;"></p>-->
+<!--      <span class="progress-label align-self-end" style="color: #fff; background-color: #FF4500; border-radius: 5px; padding: 2px 6px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); margin-bottom: 10px;">Intermediate</span>-->
+<!--&lt;!&ndash;      <a href="#" class="card-button align-self-end" style="background-color: #FFD700; color: #FF4500; border: none; border-radius: 4px; padding: 8px 16px; text-decoration: none; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease; margin-bottom: 15px;"></a>&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="col-md-3 mb-3">-->
+<!--  <div class="card ai-card" style="background-color: #FF4500; border: 20px solid pink; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">-->
+<!--    <div class="card-body d-flex flex-column justify-content-between" style="height: 100%; border: none;">-->
+<!--      <i class="fas fa-brain" style="font-size: 48px; color: #FFD700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);"></i>-->
+<!--      <h5 class="card-title" style="color: green; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-top: 15px;">Artificial Neural Networks</h5>-->
+<!--      <p class="card-text" style="color: black; margin-top: 10px;"></p>-->
+<!--      <span class="progress-label align-self-end" style="color: #fff; background-color: #FF4500; border-radius: 5px; padding: 2px 6px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); margin-bottom: 10px;">Advanced</span>-->
+<!--&lt;!&ndash;      <a href="#" class="card-button align-self-end" style="background-color: #FFD700; color: #FF4500; border: none; border-radius: 4px; padding: 8px 16px; text-decoration: none; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease; margin-bottom: 15px;"></a>&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="col-md-3 mb-3">-->
+<!--  <div class="card ai-card" style="background-color: #FF4500; border: 20px solid pink; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">-->
+<!--    <div class="card-body d-flex flex-column justify-content-between" style="height: 100%; border: none;">-->
+<!--      <i class="fas fa-cogs" style="font-size: 58px; color: #FFD700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);"></i>-->
+<!--      <h5 class="card-title" style="color: green; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-top: 15px;">Machine Learning</h5>-->
+<!--      <p class="card-text" style="color: black; margin-top: 10px;"></p>-->
+<!--      <span class="progress-label align-self-end" style="color: #fff; background-color: #FF4500; border-radius: 5px; padding: 2px 6px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); margin-bottom: 10px;">Intermediate</span>-->
+<!--&lt;!&ndash;      <a href="#" class="card-button align-self-end" style="background-color: #FFD700; color: #FF4500; border: none; border-radius: 4px; padding: 8px 16px; text-decoration: none; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease; margin-bottom: 15px;"></a>&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--           </div>-->
+<!--    </div>-->
+<!--    </div>-->
+<!--   </section>-->
+
+
+
+
+
+<!--<section id="project" data-aos="fade-down" data-aos-duration="1000" >-->
+<!--    <div class="container">-->
+<!--        <div class="row justify-content-center">-->
+<!--            <div class="col-md-8 text-center mt-2">-->
+<!--                 <h2 class="text-center mt-5" style="font-size: 48px; font-weight: bold; ">PROJECTS</h2><br><br>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row justify-content-center" >-->
+<!--            <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000">-->
+<!--                <div class="card">-->
+<!--    <a href="https://github.com/2100031988/Portfolio" target="_blank">-->
+<!--        <img class="card-img-top" src="img/portfolio1.jpeg" alt="Card image cap">-->
+<!--        <div class="card-body" >-->
+<!--            <h5 class="card-title" >Project Portfolio Administration</h5>-->
+<!--            <p class="card-text">Developed a system for managing project portfolios efficiently.</p>-->
+<!--        </div>-->
+<!--    </a>-->
+<!--</div>-->
+<!--            </div>-->
+<!--            <div class="col-md-4 mb-4" data-aos="fade-down"data-aos-duration="1000">-->
+<!--    <div class="card">-->
+<!--        <a href="https://github.com/2100031988/hand_gesture_using_deeplearning" target="_blank">-->
+<!--            <img class="card-img-top" src="img/gesture223.jpeg" alt="Card image cap">-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title">Hand Gesture Identification</h5>-->
+<!--                <p class="card-text">Implemented a deep learning model to recognize hand gestures accurately using deep learning techniques</p>-->
+<!--            </div>-->
+<!--        </a>-->
+<!--    </div>-->
+<!--</div>-->
+<!--            <div class="col-md-4 mb-4" data-aos="fade-up-right" data-aos-duration="1000">-->
+<!--    <div class="card">-->
+<!--        <a href="https://github.com/2100031988/Electricity-biling-system-using-JFSD" target="_blank">-->
+<!--            <img class="card-img-top" src="img/BILL.jpeg" alt="Card image cap">-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title">Electricity Utility Management</h5>-->
+<!--                <p class="card-text">Created an efficient system for managing electricity billing processes.</p>-->
+<!--            </div>-->
+<!--        </a>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--            <div class="col-md-4 mb-4" data-aos="fade-left"data-aos-duration="1000">-->
+<!--    <div class="card">-->
+<!--        <a href="#">-->
+<!--            <img class="card-img-top" src="img/netflic.jpeg" alt="Card image cap">-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title">On-Demand Video Platform</h5>-->
+<!--                <p class="card-text">Developed a clone of Netflix with user authentication, movie browsing, and streaming features.</p>-->
+<!--            </div>-->
+<!--        </a>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="col-md-4 mb-4" data-aos="fade-up-right" data-aos-duration="1000">-->
+<!--    <div class="card">-->
+<!--        <a href="https://github.com/2100031988/weather_app">-->
+<!--            <img class="card-img-top" src="img/weather.webp" alt="Card image cap">-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title">Meteorological Application</h5>-->
+<!--                <p class="card-text">Created a weather application with real-time weather data and forecasts based on user location or search input.</p>-->
+<!--            </div>-->
+<!--        </a>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--<section id="contact" class="gradient-background" data-aos="zoom-out-up" data-aos-duration="1000">-->
+<!--  <div class="container">-->
+<!--    <div class="row justify-content-center">-->
+<!--      <div class="col-md-8">-->
+<!--        <h2 class="text-center mb-4">Contact Me</h2>-->
+<!--        <form id="contactForm" method="post" action="contact.php">-->
+<!--          <div class="form-group">-->
+<!--            <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Your Name" required>-->
+<!--          </div>-->
+<!--          <div class="form-group">-->
+<!--            <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Your Email" required>-->
+<!--          </div>-->
+<!--          <div class="form-group">-->
+<!--            <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="Your Phone Number">-->
+<!--          </div>-->
+<!--          <div class="form-group">-->
+<!--            <label for="description"></label>-->
+<!--            <textarea class="form-control form-control-lg" id="description" name="message" rows="6" placeholder="Your Message" required></textarea>-->
+<!--            <small class="text-muted">Max 700 characters</small>-->
+<!--          </div>-->
+<!--          <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message</button>-->
+<!--        </form>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+<!--&lt;!&ndash; Confirmation message notification &ndash;&gt;-->
+<!--<div id="confirmationMessage" class="alert alert-success fixed-top w-100 text-center" style="display: none;">-->
+<!--    Thanks for your feedback! We will contact you soon.-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash; JavaScript &ndash;&gt;-->
+<!--    <footer class="bg-dark text-white text-center py-3">-->
+
+<!--        <div class="text-center"><br>-->
+<!--                    <p>&copy; 2024 Sabyasachi Kumar. All Rights Reserved.</p>-->
+<!--                    <p>Email: sabyasachikumar2@gmail.com</p>-->
+<!--                    <p>Phone: +918978992483</p>-->
+<!--                </div>-->
+<!--    </footer>-->
+
+
+
+<!--&lt;!&ndash; Bootstrap and jQuery &ndash;&gt;-->
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>-->
+<!--<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>-->
+<!--<script src="script.js" defer></script>-->
+<!--<script>-->
+<!--  AOS.init();-->
+<!--</script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>-->
+<!--</body>-->
+<!--</html>-->
