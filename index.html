@@ -369,7 +369,7 @@
                         <img class="card-img-top project-img" src="img/portfolio1.jpeg" alt="Portfolio Project Image">
                         <div class="card-body">
                             <h5 class="card-title">Project Portfolio Administration</h5>
-                            <p class="card-text">Developed a system for managing </p>
+                            <p class="card-text">System to manage user portfolios.</p>
                         </div>
                     </a>
                 </div>
@@ -382,7 +382,7 @@
                         <img class="card-img-top project-img" src="img/gesture223.jpeg" alt="Hand Gesture Project Image">
                         <div class="card-body">
                             <h5 class="card-title">Hand Gesture Identification</h5>
-                            <p class="card-text">Developed a system for managing</p>
+                            <p class="card-text">System to recognize hand gestures.</p>
                         </div>
                     </a>
                 </div>
@@ -395,7 +395,7 @@
                         <img class="card-img-top project-img" src="img/BILL.jpeg" alt="Billing Project Image">
                         <div class="card-body">
                             <h5 class="card-title">Electricity Utility Management</h5>
-                            <p class="card-text">Developed a system for managing </p>
+                            <p class="card-text">Utility billing and management system.</p>
                         </div>
                     </a>
                 </div>
@@ -411,7 +411,7 @@
                         <img class="card-img-top project-img" src="img/netflic.jpeg" alt="Netflix Clone Image">
                         <div class="card-body">
                             <h5 class="card-title">On-Demand Video Platform</h5>
-                            <p class="card-text">Developed a Netflix clone with.</p>
+                            <p class="card-text">Netflix video streaming platform.</p>
                         </div>
                     </a>
                 </div>
@@ -424,7 +424,7 @@
                         <img class="card-img-top project-img" src="img1/carrental.jpg" alt="Car Rental Project Image">
                         <div class="card-body">
                             <h5 class="card-title">Vehicle Rental Service Platform</h5>
-                            <p class="card-text">Developed a system for.</p>
+                            <p class="card-text">System for managing car rentals.</p>
                         </div>
                     </a>
                 </div>
@@ -437,7 +437,7 @@
                         <img class="card-img-top project-img" src="img/weather.webp" alt="Weather App Project Image">
                         <div class="card-body">
                             <h5 class="card-title">Meteorological Application</h5>
-                            <p class="card-text">Developed a weather application </p>
+                            <p class="card-text">Weather data and forecasting system.</p>
                         </div>
                     </a>
                 </div>
@@ -448,10 +448,11 @@
 
 
 
+
             <!-- Certifications and Achievements Section -->
 <section class="work section" id="work">
   <div class="container">
-    <h2 class="section-title">Certifications and Achievements</h2>
+    <h2 class="section-title">Achievements</h2>
 
     <div class="achievements-grid">
       <div class="achievement-item">
@@ -479,19 +480,116 @@
 
 
             <!--===== CONTACT =====-->
-            <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
 
-                <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" placeholder="Type Mesaage.." cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Send" class="contact__button button">
-                    </form>
+
+<section class="contact section" id="contact">
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact__container bd-grid">
+        <form id="form" class="contact__form" enctype="multipart/form-data">
+            <div class="field">
+                <label for="from_name">Your Name <span style="color: red;">*</span></label>
+                <input type="text" name="from_name" id="from_name" class="contact__input" placeholder="John Doe" required>
+            </div>
+
+            <div class="field">
+                <label for="from_email">Your Email <span style="color: red;">*</span></label>
+                <input type="email" name="from_email" id="from_email" class="contact__input" placeholder="john@example.com" required>
+            </div>
+
+            <div class="field">
+                <label for="from_phone">Your Phone Number <span style="color: red;">*</span></label>
+                <input type="tel" name="from_phone" id="from_phone" class="contact__input" placeholder="+1234567890">
+                <small id="phoneHelp" class="text-muted">Include country code.</small>
+            </div>
+
+            <div class="field">
+                <label for="message">Your Message <span style="color: red;">*</span></label>
+                <textarea name="message" id="message" rows="5" class="contact__input" placeholder="Max 700 words" maxlength="2000" required></textarea>
+                <div class="char-count"></div>
+            </div>
+
+            <div class="field">
+                <label for="attachment">Attachment (Optional)</label>
+                <input type="file" name="attachment" id="attachment" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx" class="contact__input">
+                <div class="file-preview" id="file-preview">
+                  <img id="preview-img" src="" alt="">
+                  <p id="preview-text"></p>
                 </div>
-            </section>
-        </main>
+            </div>
+
+            <input type="submit" id="button" value="Send Message" class="contact__button button">
+            <p class="success-message" style="display: none;">Email sent successfully!</p>
+            <p class="error-message" style="display: none;">Failed to send email.</p>
+        </form>
+    </div>
+</section>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('t5pgDRORqlcQrNAuu');
+
+  const form = document.getElementById('form');
+  const charCount = document.querySelector('.char-count');
+  const messageInput = document.getElementById('message');
+  const previewImg = document.getElementById('preview-img');
+  const previewText = document.getElementById('preview-text');
+  const fileInput = document.getElementById('attachment');
+  const filePreview = document.getElementById('file-preview');
+  const btn = document.getElementById('button');
+
+  // Live character count for message field
+  messageInput.addEventListener('input', function () {
+    const remaining = 2000 - messageInput.value.length;
+    charCount.textContent = `${remaining} characters left`;
+  });
+
+  // File upload preview
+  fileInput.addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (file) {
+      if (file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          previewImg.src = e.target.result;
+          previewText.textContent = '';
+          filePreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      } else {
+        previewImg.src = '';
+        previewText.textContent = `File uploaded: ${file.name}`;
+        filePreview.style.display = 'block';
+      }
+    } else {
+      filePreview.style.display = 'none';
+    }
+  });
+
+  // Form submission
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    btn.value = 'Sending...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_1asrua7';
+
+    // Send form using EmailJS
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        btn.value = 'Send Message';
+        document.querySelector('.success-message').style.display = 'block';
+        document.querySelector('.error-message').style.display = 'none';
+      }, (err) => {
+        btn.value = 'Send Message';
+        document.querySelector('.success-message').style.display = 'none';
+        document.querySelector('.error-message').style.display = 'block';
+      });
+  });
+</script>
+
 
 
         <!--===== FOOTER =====-->
@@ -509,17 +607,16 @@
         <!--===== SCROLL REVEAL =====-->
         <script src="https://unpkg.com/scrollreveal"></script>
 
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
         <script>
-        var typed = new Typed('#typed', {
+            var typed = new Typed('#typed', {
             strings: ["Passionate Learner", "Tech Enthusiast", "Developer", "Problem Solver"],
             typeSpeed: 50,
             backSpeed: 50,
             loop: true
         });
         </script>
-
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
     </body>
 </html>
 
