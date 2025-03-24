@@ -1,0 +1,15 @@
+/* Example of overriding Bootstrap styles */
+.navbar {
+    background-color: #333; /* Change navbar background color */
+}
+
+.navbar-brand {
+    color: #fff; /* Change navbar brand text color */
+}
+
+.btn-primary {
+    background-color: #f39c12; /* Change primary button background color */
+    border-color: #f39c12; /* Change primary button border color */
+}
+
+/* Add more custom styles here */
