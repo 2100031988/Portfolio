@@ -1,56 +1,104 @@
-## Portfolio 👨‍💻
+# Sabyasachi Kumar Portfolio
 
-## About ℹ️
+A modern portfolio with a production-style contact pipeline.
 
+## What's Included
 
-Portfolio is a personal website project developed using HTML, CSS, and JavaScript. It serves as a showcase of your skills, projects, and experiences. The purpose of the portfolio is to provide visitors with an overview of your work and qualifications.
+- Responsive dashboard-style portfolio UI
+- Projects with image cards + category filters
+- Contact form with:
+  - OTP verification
+  - Honeypot anti-bot field
+  - Rate limiting
+  - Optional image links in submissions
+- SQLite database storage for all leads
+- Professional reference IDs for each request
+- Branded HTML acknowledgement emails
+- Admin page to view and export leads as CSV
+- Newsletter subscription storage
+- Right-side React + Material UI chatbot assistant
 
+## Framework/Library Upgrade
 
-## Features 🚀
+This project now includes CDN integrations for:
 
+- Tailwind CSS
+- Bootstrap
+- React
+- Material UI
 
-- Responsive design: Ensures optimal viewing experience across devices.
-- Customizable layout: Easily modify the appearance and content to reflect your personal style and achievements.
-- Project showcase: Display your projects with descriptions, screenshots, and links to live demos or source code repositories.
-- Resume/CV section: Include a downloadable resume or CV to provide additional information about your background and skills.
-- Contact form: Allow visitors to get in touch with you directly through a contact form.
+## Setup
 
-## Getting Started 🛠️
+1. Install dependencies
 
-### Prerequisites
+```bash
+npm install
+```
 
-- Text editor (e.g., Visual Studio Code, Sublime Text)
-- Web browser (e.g., Google Chrome, Mozilla Firefox)
+2. Create env file
 
-### Installation
+```bash
+cp .env.example .env
+```
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/portfolio.git
-   
-2. **Navigate to the project directory:**
-   ```bash
-   cd portfolio
+3. Update `.env`
 
-3. **Open the 'index.html' file in your web browser to view the portfolio locally.**
-   
-    This markdown code formats the `git clone` command in a box to distinguish it as a terminal command, similar to how it appears on GitHub. Adjust the `yourusername` placeholder with your actual GitHub username.
-   
-   
-## Usage 📝
+```env
+PORT=3000
+ADMIN_TOKEN=change-this-admin-token
 
-Once the portfolio is set up, you can customize it to showcase your projects, skills, and experiences. Modify the HTML, CSS, and JavaScript files to update the content and styling according to your preferences. You can also add new sections or features to tailor the portfolio to your needs.
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=your-email@example.com
+SMTP_PASS=your-app-password
+OWNER_EMAIL=sabyakumar2003@gmail.com
+```
 
-## Contributing 🤝
+4. Start server
 
-Contributions to the Portfolio project are welcome! If you have suggestions for improvements or new features, please fork the repository, make your changes, and submit a pull request. For major changes, please open an issue first to discuss potential updates or improvements.
+```bash
+npm start
+```
 
-## License 📄
+5. Open site
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-© 2024 Sabyasachi Kumar
+```text
+http://localhost:3000
+```
 
-## Acknowledgments 🙏
+6. Open admin page
 
-The development of this portfolio was inspired by the need for an online platform to showcase skills and projects. Special thanks to the online developer community for providing valuable resources, tutorials, and guidance in web development.
+```text
+http://localhost:3000/admin.html
+```
 
+## SMTP (What It Is)
+
+SMTP is the email server configuration that lets your app send real emails.
+Without SMTP, form data is still saved to database, but acknowledgement emails cannot be sent.
+
+For Gmail:
+
+- Enable 2-factor authentication
+- Generate an App Password
+- Use that App Password as `SMTP_PASS`
+
+## APIs
+
+- `POST /api/otp/request` - sends or returns dev OTP
+- `POST /api/contact` - verifies OTP, saves lead, sends emails
+- `POST /api/newsletter` - saves newsletter subscriber
+- `GET /api/admin/leads` - admin JSON leads list (requires token)
+- `GET /api/admin/leads/export.csv` - admin CSV export (requires token)
+- `GET /health` - service health
+
+## Security Notes
+
+- Honeypot rejects bot-like submissions
+- Rate limit prevents contact endpoint abuse
+- Admin APIs require `ADMIN_TOKEN`
+
+## License
+
+MIT
