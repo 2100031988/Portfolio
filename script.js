@@ -1,253 +1,216 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector(".l-header");
-  const navMain = document.getElementById("nav-main");
-  const navMenu = document.getElementById("nav-menu");
-  const navToggle = document.getElementById("nav-toggle");
-  const navMinimize = document.getElementById("nav-minimize");
-  const navExpand = document.getElementById("nav-expand");
-  const navLinks = Array.from(document.querySelectorAll('.nav__link[href^="#"]'));
-  const sections = Array.from(document.querySelectorAll("section[id]"));
-  const revealTargets = Array.from(document.querySelectorAll(".reveal"));
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+    // ===== EMAIL.JS INITIALIZATION =====
+    const YOUR_PUBLIC_KEY = "w0qkzgIsSgb35j_u0";
+    const SERVICE_ID = "service_m3nsdyn";
+    const TEMPLATE_ID = "template_h4hfplp";          // Contact Us (admin notification)
+    const AUTO_REPLY_TEMPLATE_ID = "template_hfzp5yu"; // Auto-Reply (to visitor)
 
-  const messageInput = document.getElementById("message");
-  const charCount = document.querySelector(".char-count");
-  const form = document.getElementById("form");
-  const submitButton = document.getElementById("button");
-  const attachmentsInput = document.getElementById("attachments");
-  const footerNewsletter = document.getElementById("footer-newsletter");
-  const scrollProgress = document.getElementById("scroll-progress");
-  const backToTop = document.getElementById("back-to-top");
+    const emailjsLoaded = typeof window.emailjs !== 'undefined' && typeof emailjs.init === 'function';
+    const autoReplyEnabled = emailjsLoaded && AUTO_REPLY_TEMPLATE_ID;
 
-  async function parseJsonSafe(response) {
-    const text = await response.text();
-    if (!text) return {};
-    try {
-      return JSON.parse(text);
-    } catch (_) {
-      const shortText = text.length > 180 ? `${text.slice(0, 180)}...` : text;
-      return {
-        success: false,
-        message: `Server returned a non-JSON response (HTTP ${response.status}). ${shortText}`
-      };
+    if (emailjsLoaded) {
+        emailjs.init(YOUR_PUBLIC_KEY);
+    } else {
+        console.warn('EmailJS is not loaded. Contact form will work only as a placeholder.');
     }
-  }
 
-  const minimizeState = localStorage.getItem("nav-minimized") === "true";
-  if (minimizeState && navMain && header && navExpand) {
-    navMain.classList.add("nav--minimized");
-    header.classList.add("nav--minimized");
-    navExpand.classList.add("visible");
-  }
+    // Elements
+    const header = document.querySelector('.l-header');
+    const navMenu = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const sections = document.querySelectorAll('section[id]');
+    const revealElements = document.querySelectorAll('.reveal');
+    const scrollProgress = document.getElementById('scroll-progress');
+    const backToTop = document.getElementById('back-to-top');
+    const contactForm = document.getElementById('contact-form');
+    const messageInput = document.getElementById('message');
+    const charCount = document.getElementById('char-count');
+    const formStatus = document.getElementById('form-status');
 
-  if (navMinimize && navMain && navExpand && header) {
-    navMinimize.addEventListener("click", () => {
-      navMain.classList.toggle("nav--minimized");
-      header.classList.toggle("nav--minimized");
-      navExpand.classList.toggle("visible");
-      localStorage.setItem("nav-minimized", navMain.classList.contains("nav--minimized"));
-    });
-  }
-
-  if (navExpand && navMain && header) {
-    navExpand.addEventListener("click", () => {
-      navMain.classList.remove("nav--minimized");
-      header.classList.remove("nav--minimized");
-      navExpand.classList.remove("visible");
-      localStorage.setItem("nav-minimized", "false");
-    });
-  }
-
-  const updateHeaderState = () => {
-    if (header) header.classList.toggle("is-scrolled", window.scrollY > 10);
-  };
-
-  const updateActiveLink = () => {
-    const scrollPosition = window.scrollY + 160;
-    sections.forEach((section) => {
-      const top = section.offsetTop;
-      const bottom = top + section.offsetHeight;
-      if (scrollPosition >= top && scrollPosition < bottom) {
-        navLinks.forEach((link) => {
-          link.classList.toggle("active-link", link.getAttribute("href") === `#${section.id}`);
-        });
-      }
-    });
-  };
-
-  if (navToggle && navMenu) {
-    navToggle.addEventListener("click", () => navMenu.classList.toggle("show"));
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => navMenu.classList.remove("show"));
-    });
-  }
-
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.18 }
-    );
-    revealTargets.forEach((element) => observer.observe(element));
-  } else {
-    revealTargets.forEach((element) => element.classList.add("is-visible"));
-  }
-
-  if (messageInput && charCount) {
-    const updateCharacterCount = () => {
-      charCount.textContent = `${Math.max(0, 2000 - messageInput.value.length)} characters left`;
+    // ===== SCROLL PROGRESS BAR =====
+    const updateScrollProgress = () => {
+        if (!scrollProgress) return;
+        const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress_value = windowHeight > 0 ? (window.scrollY / windowHeight) * 100 : 0;
+        scrollProgress.style.width = scrollProgress_value + '%';
     };
-    messageInput.addEventListener("input", updateCharacterCount);
-    updateCharacterCount();
-  }
 
-  // Attachments input is optional; no OTP flow required anymore.
+    window.addEventListener('scroll', updateScrollProgress);
 
-  if (form && submitButton) {
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
+    // ===== HEADER SCROLL STATE =====
+    const updateHeaderState = () => {
+        header.classList.toggle('is-scrolled', window.scrollY > 10);
+    };
 
-      const successMessage = document.querySelector(".success-message");
-      const errorMessage = document.querySelector(".error-message");
+    window.addEventListener('scroll', updateHeaderState);
 
-      submitButton.value = "Sending...";
-      submitButton.disabled = true;
-      if (successMessage) successMessage.style.display = "none";
-      if (errorMessage) errorMessage.style.display = "none";
-
-      try {
-        const formData = new FormData();
-        formData.append('from_name', document.getElementById("from_name")?.value?.trim());
-        formData.append('from_email', document.getElementById("from_email")?.value?.trim());
-        formData.append('from_phone', document.getElementById("from_phone")?.value?.trim());
-        formData.append('message', document.getElementById("message")?.value?.trim());
-        formData.append('website', document.getElementById("website")?.value?.trim() || "");
-
-        if (attachmentsInput && attachmentsInput.files && attachmentsInput.files.length) {
-          for (let i = 0; i < attachmentsInput.files.length; i++) {
-            formData.append('attachments', attachmentsInput.files[i]);
-          }
-        }
-
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          body: formData
+    // ===== NAVIGATION TOGGLE (MOBILE) =====
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
         });
 
-        const data = await parseJsonSafe(response);
-        if (!response.ok || !data.success) {
-          throw new Error(data.message || "Failed to submit form");
-        }
-
-        submitButton.value = "Send Message";
-        submitButton.disabled = false;
-
-        if (successMessage) {
-          successMessage.style.display = "block";
-          const ref = data.referenceId || data.reference_id || "pending";
-          successMessage.textContent = `Thanks! We received your request. Reference ID: ${ref}`;
-        }
-        form.reset();
-        if (attachmentsInput) attachmentsInput.value = null;
-        if (charCount) charCount.textContent = "2000 characters left";
-      } catch (error) {
-        submitButton.value = "Send Message";
-        submitButton.disabled = false;
-        if (errorMessage) {
-          errorMessage.style.display = "block";
-          const baseMessage = error.message || "Failed to send your request.";
-          const likelyServerDown = window.location.origin.startsWith("file:");
-          errorMessage.textContent = likelyServerDown
-            ? `${baseMessage} Open this site from http://localhost:3000 (not direct file preview).`
-            : baseMessage;
-        }
-      }
-    });
-  }
-
-  if (footerNewsletter) {
-    footerNewsletter.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const success = footerNewsletter.querySelector(".newsletter-success");
-      const email = footerNewsletter.querySelector('input[name="newsletter_email"]')?.value?.trim();
-      if (!email) return;
-
-      try {
-        const response = await fetch("/api/newsletter", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email })
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.add('hidden');
+            });
         });
-        const data = await parseJsonSafe(response);
-        if (!response.ok || !data.success) throw new Error(data.message || "Subscribe failed");
-
-        if (success) {
-          success.style.display = "block";
-          success.textContent = "Subscribed - thank you!";
-        }
-        footerNewsletter.reset();
-      } catch (_) {
-        if (success) {
-          success.style.display = "block";
-          success.textContent = "Saved locally. Server not available yet.";
-        }
-      }
-    });
-  }
-
-  const filterButtons = Array.from(document.querySelectorAll(".project-filter__btn"));
-  const projectCards = Array.from(document.querySelectorAll(".project-card"));
-
-  if (filterButtons.length && projectCards.length) {
-    filterButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const category = btn.dataset.category;
-        filterButtons.forEach((b) => b.classList.remove("is-active"));
-        btn.classList.add("is-active");
-
-        projectCards.forEach((card) => {
-          const tags = (card.dataset.category || "").split(" ");
-          const show = category === "all" || tags.includes(category);
-          card.style.display = show ? "block" : "none";
-        });
-      });
-    });
-  }
-
-  updateHeaderState();
-  updateActiveLink();
-
-  const updateScrollUI = () => {
-    const total = document.documentElement.scrollHeight - window.innerHeight;
-    const current = window.scrollY;
-    const pct = total > 0 ? (current / total) * 100 : 0;
-    if (scrollProgress) {
-      scrollProgress.style.width = `${Math.min(100, Math.max(0, pct))}%`;
     }
+
+    // ===== ACTIVE LINK HIGHLIGHTING =====
+    const updateActiveLink = () => {
+        const scrollPosition = window.scrollY + 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active-link');
+                    }
+                });
+            }
+        });
+    };
+
+    window.addEventListener('scroll', updateActiveLink);
+
+    // ===== REVEAL ANIMATION (INTERSECTION OBSERVER) =====
+    if ('IntersectionObserver' in window) {
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(element => observer.observe(element));
+    } else {
+        revealElements.forEach(element => element.classList.add('is-visible'));
+    }
+
+    // ===== BACK TO TOP BUTTON =====
     if (backToTop) {
-      backToTop.classList.toggle("visible", current > 500);
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     }
-  };
 
-  if (backToTop) {
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    // ===== CHARACTER COUNTER FOR MESSAGE =====
+    if (messageInput && charCount) {
+        messageInput.addEventListener('input', () => {
+            charCount.textContent = messageInput.value.length;
+        });
+    }
+
+    // ===== CONTACT FORM SUBMISSION WITH EMAILJS =====
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Sending...</span><i class="bx bx-loader-alt text-lg animate-spin"></i>';
+
+            try {
+                if (!emailjsLoaded) {
+                    formStatus.classList.remove('hidden');
+                    formStatus.textContent = '✗ Email service is unavailable locally. Please contact me directly via email.';
+                    formStatus.className = 'text-sm text-red-400 text-center';
+                    return;
+                }
+
+                // Shared params — must match {{ }} placeholders in BOTH templates
+                const commonParams = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value,
+                    time: new Date().toLocaleString(),
+                    reference_id: 'PORT-' + Date.now()
+                };
+
+                const ownerPromise = emailjs.send(SERVICE_ID, TEMPLATE_ID, commonParams);
+                const autoReplyPromise = autoReplyEnabled
+                    ? emailjs.send(SERVICE_ID, AUTO_REPLY_TEMPLATE_ID, commonParams)
+                    : Promise.resolve();
+
+                await Promise.all([ownerPromise, autoReplyPromise]);
+
+                // Show success message
+                formStatus.classList.remove('hidden');
+                formStatus.textContent = autoReplyEnabled
+                    ? '✓ Message received. A confirmation email has been sent to you.'
+                    : '✓ Message received. Auto-reply is not configured yet.';
+                formStatus.className = 'text-sm text-green-400 text-center';
+
+                // Reset form
+                contactForm.reset();
+                charCount.textContent = '0';
+
+                // Clear status after 5 seconds
+                setTimeout(() => {
+                    formStatus.classList.add('hidden');
+                }, 5000);
+
+            } catch (error) {
+                console.error('EmailJS error:', error);
+                formStatus.classList.remove('hidden');
+                formStatus.textContent = '✗ Error sending email. Please try again or contact directly.';
+                formStatus.className = 'text-sm text-red-400 text-center';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }
+        });
+    }
+
+    // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
     });
-  }
 
-  updateScrollUI();
-  window.addEventListener(
-    "scroll",
-    () => {
-      updateHeaderState();
-      updateActiveLink();
-      updateScrollUI();
-    },
-    { passive: true }
-  );
+    // ===== INITIAL CALL =====
+    updateScrollProgress();
+    updateHeaderState();
+    updateActiveLink();
 });

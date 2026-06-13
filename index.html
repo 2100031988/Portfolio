@@ -1,550 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Sabyasachi Kumar — Developer portfolio and professional dashboard showcasing AI, full-stack, and cloud engineering work." />
+    <meta name="description" content="Sabyasachi Kumar — Developer portfolio showcasing AI, full-stack, and cloud engineering work." />
     <link rel="icon" href="img/sabya_123_18q_icon.ico" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
     <title>Sabyasachi Kumar — Developer Portfolio</title>
-  </head>
-  <body>
-    <div class="scroll-progress" id="scroll-progress"></div>
+</head>
+<body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-x-hidden">
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 w-0 z-50 transition-all duration-300"></div>
 
-    <button class="nav__expand-btn" id="nav-expand" aria-label="Expand navigation">
-      <i class='bx bx-chevron-right'></i>
-    </button>
+    <!-- Header/Navigation -->
+    <header class="l-header fixed top-0 left-0 w-full z-30 transition-all duration-300" id="header">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Sabyasachi
+                </a>
 
-    <header class="l-header">
-      <nav class="nav bd-grid" id="nav-main">
-        <div class="nav__header">
-          <a href="#home" class="nav__logo">Sabyasachi Kumar</a>
-          <button class="nav__minimize" id="nav-minimize" aria-label="Minimize navigation">
-            <i class='bx bx-chevron-left'></i>
-          </button>
-        </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="nav-link active-link flex items-center gap-2 hover:text-purple-400 transition">
+                        <i class='bx bxs-home text-lg'></i><span>Home</span>
+                    </a>
+                    <a href="#about" class="nav-link flex items-center gap-2 hover:text-purple-400 transition">
+                        <i class='bx bxs-user text-lg'></i><span>About</span>
+                    </a>
+                    <a href="#skills" class="nav-link flex items-center gap-2 hover:text-purple-400 transition">
+                        <i class='bx bxs-book text-lg'></i><span>Skills</span>
+                    </a>
+                    <a href="#projects" class="nav-link flex items-center gap-2 hover:text-purple-400 transition">
+                        <i class='bx bxs-briefcase text-lg'></i><span>Projects</span>
+                    </a>
+                    <a href="#contact" class="nav-link flex items-center gap-2 hover:text-purple-400 transition">
+                        <i class='bx bxs-send text-lg'></i><span>Contact</span>
+                    </a>
+                </div>
 
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item"><a href="#home" class="nav__link active-link"><i class='bx bxs-home'></i><span>Home</span></a></li>
-            <li class="nav__item"><a href="#about" class="nav__link"><i class='bx bxs-user'></i><span>About</span></a></li>
-            <li class="nav__item"><a href="#skills" class="nav__link"><i class='bx bxs-book'></i><span>Skills</span></a></li>
-            <li class="nav__item"><a href="#project" class="nav__link"><i class='bx bxs-briefcase'></i><span>Projects</span></a></li>
-            <li class="nav__item"><a href="#work" class="nav__link"><i class='bx bxs-calendar'></i><span>Timeline</span></a></li>
-            <li class="nav__item"><a href="#awards" class="nav__link"><i class='bx bxs-award'></i><span>Awards</span></a></li>
-            <li class="nav__item"><a href="#contact" class="nav__link"><i class='bx bxs-send'></i><span>Contact</span></a></li>
-          </ul>
-        </div>
+                <button id="nav-toggle" class="md:hidden p-2 hover:bg-slate-700 rounded-lg transition" aria-label="Toggle menu">
+                    <i class='bx bx-menu text-2xl'></i>
+                </button>
+            </div>
 
-        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
-          <i class='bx bx-menu'></i>
-        </button>
-      </nav>
+            <div id="nav-menu" class="hidden md:hidden bg-slate-800/95 backdrop-blur rounded-lg mt-2 p-4 space-y-2">
+                <a href="#home" class="nav-link block px-4 py-2 hover:bg-slate-700 rounded-lg transition active-link">Home</a>
+                <a href="#about" class="nav-link block px-4 py-2 hover:bg-slate-700 rounded-lg transition">About</a>
+                <a href="#skills" class="nav-link block px-4 py-2 hover:bg-slate-700 rounded-lg transition">Skills</a>
+                <a href="#projects" class="nav-link block px-4 py-2 hover:bg-slate-700 rounded-lg transition">Projects</a>
+                <a href="#contact" class="nav-link block px-4 py-2 hover:bg-slate-700 rounded-lg transition">Contact</a>
+            </div>
+        </nav>
     </header>
 
-    <main class="l-main">
-      <section class="hero section" id="home">
-        <div class="hero__grid bd-grid">
-          <div class="hero__copy reveal">
-            <span class="eyebrow">Developer dashboard</span>
-            <h1 class="hero__title">
-              Building polished digital systems with a sharp product mindset.
-            </h1>
-            <p class="hero__text">
-              I design and build clean interfaces, AI-focused projects, and full-stack experiences that feel premium, fast, and purposeful.
-            </p>
+    <!-- Main Content -->
+    <main class="l-main pt-20">
+        <!-- Hero Section -->
+        <section class="hero section min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20" id="home">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
+                <div class="reveal space-y-8">
+                    <div>
+                        <span class="text-purple-400 font-semibold text-sm tracking-wider uppercase block mb-4">Full-stack product engineering</span>
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-black font-bebas leading-tight bg-gradient-to-r from-white via-purple-200 to-pink-300 bg-clip-text text-transparent mb-6">
+                            I build polished digital experiences for ambitious teams.
+                        </h1>
+                        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+                            Delivering professional web products, scalable applications, and AI-infused workflows with a strong focus on clarity, speed, and impact.
+                        </p>
+                    </div>
 
-            <div class="hero__status">
-              <span class="pill pill--strong">Available for collaborations</span>
-              <span class="pill">AI + Web Development</span>
-              <span class="pill">Spring Boot • Python • JavaScript</span>
-            </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-slate-700/70 border border-slate-600/60 rounded-full text-slate-100 text-sm font-medium">Open to new opportunities</span>
+                        <span class="px-4 py-2 bg-slate-700/40 border border-slate-600/50 rounded-full text-slate-300 text-sm">AI • Cloud • Web Apps</span>
+                        <span class="px-4 py-2 bg-slate-700/40 border border-slate-600/50 rounded-full text-slate-300 text-sm">Enterprise-ready delivery</span>
+                    </div>
 
-            <div class="hero__actions">
-              <a href="https://drive.google.com/file/d/1cwCtFit4lN3cPUkLJ9v966t7JAYQG2CM/view?usp=sharing" class="button button--primary">Download Resume</a>
-              <a href="https://github.com/2100031988" class="button button--ghost" target="_blank" rel="noreferrer">View GitHub</a>
-              <a href="https://www.linkedin.com/in/sabyasachi-kumar-5a423b226/?skipRedirect=true" class="button button--ghost" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a href="/admin.html" class="button button--ghost" target="_blank" rel="noreferrer">Admin</a>
-            </div>
-          </div>
-
-          <div class="hero__panel reveal">
-            <div class="panel panel--glow">
-              <div class="panel__top">
-                <span class="panel__label">Live Status</span>
-                <span class="panel__chip">Online</span>
-              </div>
-
-              <div class="metric-grid">
-                <article class="metric-card">
-                  <span class="metric-card__value">06</span>
-                  <span class="metric-card__label">Highlighted projects</span>
-                </article>
-                <article class="metric-card">
-                  <span class="metric-card__value">09+</span>
-                  <span class="metric-card__label">Core technologies</span>
-                </article>
-                <article class="metric-card">
-                  <span class="metric-card__value">AI</span>
-                  <span class="metric-card__label">Specialization focus</span>
-                </article>
-                <article class="metric-card">
-                  <span class="metric-card__value">24/7</span>
-                  <span class="metric-card__label">Build mode</span>
-                </article>
-              </div>
-
-              <div class="panel__code">
-                <div class="panel__code-head">
-                  <span></span>
-                  <span></span>
-                  <span></span>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="https://drive.google.com/file/d/1cwCtFit4lN3cPUkLJ9v966t7JAYQG2CM/view?usp=sharing" target="_blank" rel="noreferrer" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg font-semibold transition transform hover:scale-105">
+                            Download CV
+                        </a>
+                        <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="px-8 py-3 border border-purple-400/50 hover:bg-purple-400/10 rounded-lg font-semibold transition">
+                            View GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/sabyasachi-kumar-5a423b226/" target="_blank" rel="noreferrer" class="px-8 py-3 border border-slate-600/50 hover:bg-slate-700/50 rounded-lg font-semibold transition">
+                            Connect on LinkedIn
+                        </a>
+                    </div>
                 </div>
-                <pre><code>developer_mode {
-  focus: interfaces + systems
-  style: bold + clean + precise
-  output: products that feel premium
-}</code></pre>
-              </div>
+
+                <div class="reveal">
+                    <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 backdrop-blur-xl rounded-2xl p-8 space-y-6 shadow-2xl">
+                        <div class="flex items-center justify-between">
+                            <span class="text-slate-400 text-sm uppercase tracking-wider font-semibold">Live Status</span>
+                            <span class="flex items-center gap-2 px-3 py-1 bg-green-500/20 border border-green-500/50 rounded-full">
+                                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                                <span class="text-green-300 text-xs font-medium">Online</span>
+                            </span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-900/50 border border-slate-700/30 rounded-lg p-4 text-center">
+                                <div class="text-3xl font-black text-purple-400">06</div>
+                                <div class="text-xs text-slate-400 mt-2 uppercase tracking-wider">Projects</div>
+                            </div>
+                            <div class="bg-slate-900/50 border border-slate-700/30 rounded-lg p-4 text-center">
+                                <div class="text-3xl font-black text-pink-400">09+</div>
+                                <div class="text-xs text-slate-400 mt-2 uppercase tracking-wider">Technologies</div>
+                            </div>
+                            <div class="bg-slate-900/50 border border-slate-700/30 rounded-lg p-4 text-center">
+                                <div class="text-3xl font-black text-blue-400">AI</div>
+                                <div class="text-xs text-slate-400 mt-2 uppercase tracking-wider">Focus</div>
+                            </div>
+                            <div class="bg-slate-900/50 border border-slate-700/30 rounded-lg p-4 text-center">
+                                <div class="text-3xl font-black text-orange-400">24/7</div>
+                                <div class="text-xs text-slate-400 mt-2 uppercase tracking-wider">Building</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-950/80 border border-slate-700/50 rounded-lg p-4 font-mono text-sm text-slate-300 overflow-x-auto">
+                            <div class="text-slate-500">// Status</div>
+                            <div class="text-green-400">const status = <span class="text-pink-400">"building"</span></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="section" id="about">
-        <div class="bd-grid">
-          <div class="section-heading reveal">
-            <span class="eyebrow">About</span>
-            <h2>Less noise. More impact.</h2>
-            <p>
-              I am a computer science student specializing in AI, with a strong interest in product-grade front ends, practical machine learning, and robust backend systems.
-            </p>
-          </div>
+        <!-- About Section -->
+        <section class="section min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8" id="about">
+            <div class="max-w-6xl mx-auto w-full">
+                <h2 class="text-4xl md:text-5xl font-bold font-bebas tracking-wider mb-12 reveal">About Me</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="reveal space-y-6">
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            I'm a full-stack developer passionate about building intelligent systems and creating seamless digital experiences. With expertise in AI integration, cloud architecture, and modern web technologies, I transform ideas into production-ready solutions.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            Currently focused on leveraging machine learning and automation to solve real-world problems. I thrive in collaborative environments and love mentoring fellow developers.
+                        </p>
+                        <div class="pt-4">
+                            <h3 class="text-purple-400 font-semibold mb-4 uppercase tracking-wider text-sm">What I Do</h3>
+                            <ul class="space-y-2 text-slate-300">
+                                <li class="flex items-center gap-3">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                                    Full-Stack Web Development
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                                    AI & Machine Learning Integration
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                                    Cloud Architecture & Deployment
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                                    Product Development & Optimization
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-          <div class="about-grid">
-            <article class="glass-card reveal about-profile">
-              <img src="img1/circle_pic.png" alt="Portrait of Sabyasachi Kumar" class="about-profile__image" />
-              <h3>Sabyasachi Kumar</h3>
-              <p>AI-focused developer blending product design, full-stack execution, and practical automation for real-world results.</p>
-            </article>
-            <article class="glass-card reveal">
-              <h3>What I build</h3>
-              <p>
-                AI projects, full-stack utilities, dashboard-style interfaces, and problem-solving tools that are meant to look sharp and work reliably. Everything I create is built with intention and purpose.
-              </p>
-            </article>
-            <article class="glass-card reveal">
-              <h3>What I value</h3>
-              <p>
-                Clarity, structure, and strong visual hierarchy. I like products that feel intentional, not just assembled. Clean code and intuitive design go hand in hand.
-              </p>
-            </article>
-            <article class="glass-card reveal">
-              <h3>What I use</h3>
-              <p>
-                Python, Java, JavaScript, Spring Boot, TensorFlow, Pandas, SQL, and modern UI patterns. Always learning new technologies to stay ahead.
-              </p>
-            </article>
-            <article class="glass-card reveal">
-              <h3>How I work</h3>
-              <p>
-                I structure pages like products: strong hierarchy, decisive spacing, and clear entry points so the experience feels intentional instead of decorative. User experience is priority.
-              </p>
-            </article>
-            <article class="glass-card reveal">
-              <h3>Why it matters</h3>
-              <p>
-                The goal is not just to show projects, but to make the interface itself feel like proof of taste, control, and engineering discipline. Quality over quantity always.
-              </p>
-            </article>
-            <article class="glass-card reveal">
-              <h3>My Journey</h3>
-              <p>
-                Started with curiosity about how things work. Now building solutions that solve real problems. Every project teaches me something new about design and engineering.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
+                    <div class="reveal">
+                        <div class="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 backdrop-blur-xl rounded-2xl p-8 space-y-6">
+                            <div class="space-y-4">
+                                <h3 class="text-purple-400 font-semibold uppercase tracking-wider text-sm">Experience</h3>
+                                <div class="space-y-4">
+                                    <div class="border-l-2 border-purple-500 pl-4">
+                                        <h4 class="font-semibold text-white">Full Stack Developer</h4>
+                                        <p class="text-sm text-slate-400">2022 - Present</p>
+                                        <p class="text-slate-300 mt-1 text-sm">Building scalable web applications and AI-powered solutions</p>
+                                    </div>
+                                    <div class="border-l-2 border-pink-500 pl-4">
+                                        <h4 class="font-semibold text-white">Junior Developer</h4>
+                                        <p class="text-sm text-slate-400">2020 - 2022</p>
+                                        <p class="text-slate-300 mt-1 text-sm">Started with web development fundamentals</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <section class="section" id="skills">
-        <div class="bd-grid">
-          <div class="section-heading reveal">
-            <span class="eyebrow">Skills</span>
-            <h2>Stack built for shipping.</h2>
-          </div>
+        <!-- Skills Section -->
+        <section class="section min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8" id="skills">
+            <div class="max-w-6xl mx-auto w-full">
+                <h2 class="text-4xl md:text-5xl font-bold font-bebas tracking-wider mb-12 reveal">Skills & Technologies</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="reveal bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 backdrop-blur-xl rounded-2xl p-8 hover:border-purple-500/50 transition group">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center group-hover:bg-purple-500/30 transition">
+                                <i class='bx bxs-paint text-2xl text-purple-400'></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Frontend</h3>
+                        </div>
+                        <ul class="space-y-2 text-slate-300">
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (Vanilla & Modern)</li>
+                            <li>Tailwind CSS</li>
+                            <li>Bootstrap</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
 
-          <div class="skills-grid">
-            <article class="skill-card reveal">
-              <div class="skill-card__head"><span>Frontend</span><i class='bx bx-code-alt'></i></div>
-              <div class="skill-tag-list">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
-              </div>
-              <div class="bar"><span style="width: 94%"></span></div>
-            </article>
-            <article class="skill-card reveal">
-              <div class="skill-card__head"><span>Backend</span><i class='bx bx-server'></i></div>
-              <div class="skill-tag-list">
-                <span>Java</span><span>Spring Boot</span><span>SQL</span><span>REST APIs</span>
-              </div>
-              <div class="bar"><span style="width: 90%"></span></div>
-            </article>
-            <article class="skill-card reveal">
-              <div class="skill-card__head"><span>AI / Data</span><i class='bx bx-brain'></i></div>
-              <div class="skill-tag-list">
-                <span>Python</span><span>Pandas</span><span>TensorFlow</span><span>Scikit-Learn</span>
-              </div>
-              <div class="bar"><span style="width: 88%"></span></div>
-            </article>
-            <article class="skill-card reveal">
-              <div class="skill-card__head"><span>Core CS</span><i class='bx bx-layer'></i></div>
-              <div class="skill-tag-list">
-                <span>DSA</span><span>OOP</span><span>System Design</span><span>Algorithms</span>
-              </div>
-              <div class="bar"><span style="width: 92%"></span></div>
-            </article>
-            <article class="skill-card reveal">
-              <div class="skill-card__head"><span>Tools & DevOps</span><i class='bx bx-wrench'></i></div>
-              <div class="skill-tag-list">
-                <span>Git</span><span>Docker</span><span>MySQL</span><span>Firebase</span>
-              </div>
-              <div class="bar"><span style="width: 85%"></span></div>
-            </article>
-            <article class="skill-card reveal">
-              <div class="skill-card__head"><span>Machine Learning</span><i class='bx bx-chip'></i></div>
-              <div class="skill-tag-list">
-                <span>Computer Vision</span><span>NLP</span><span>Deep Learning</span>
-              </div>
-              <div class="bar"><span style="width: 87%"></span></div>
-            </article>
-            <article class="skill-card reveal">
-              <div class="skill-card__head"><span>Cloud & Infrastructure</span><i class='bx bx-cloud'></i></div>
-              <div class="skill-tag-list">
-                <span>AWS</span><span>GCP</span><span>Kubernetes</span><span>Jenkins</span>
-              </div>
-              <div class="bar"><span style="width: 83%"></span></div>
-            </article>
-            <article class="skill-card reveal">
-              <div class="skill-card__head"><span>Mobile Development</span><i class='bx bx-phone'></i></div>
-              <div class="skill-tag-list">
-                <span>React Native</span><span>Flutter</span><span>Android</span><span>iOS</span>
-              </div>
-              <div class="bar"><span style="width: 81%"></span></div>
-            </article>
-            <article class="skill-card reveal">
-              <div class="skill-card__head"><span>Database & Cache</span><i class='bx bx-data'></i></div>
-              <div class="skill-tag-list">
-                <span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>Elasticsearch</span>
-              </div>
-              <div class="bar"><span style="width: 86%"></span></div>
-            </article>
-          </div>
-        </div>
-      </section>
+                    <div class="reveal bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 backdrop-blur-xl rounded-2xl p-8 hover:border-pink-500/50 transition group">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center group-hover:bg-pink-500/30 transition">
+                                <i class='bx bxs-server text-2xl text-pink-400'></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Backend</h3>
+                        </div>
+                        <ul class="space-y-2 text-slate-300">
+                            <li>Python</li>
+                            <li>Java & Spring Boot</li>
+                            <li>REST APIs</li>
+                            <li>Database Design</li>
+                            <li>SQL & NoSQL</li>
+                        </ul>
+                    </div>
 
-      <section class="section" id="project">
-        <div class="bd-grid">
-          <div class="section-heading reveal">
-            <span class="eyebrow">Projects</span>
-            <h2>Selected builds.</h2>
-            <p>Case-study style project cards with visuals, stack clarity, and direct GitHub access.</p>
-          </div>
+                    <div class="reveal bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 backdrop-blur-xl rounded-2xl p-8 hover:border-blue-500/50 transition group">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center group-hover:bg-blue-500/30 transition">
+                                <i class='bx bxs-wrench text-2xl text-blue-400'></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Tools & Cloud</h3>
+                        </div>
+                        <ul class="space-y-2 text-slate-300">
+                            <li>Git & GitHub</li>
+                            <li>AWS & Cloud Services</li>
+                            <li>Docker & Containerization</li>
+                            <li>AI/ML Integration</li>
+                            <li>DevOps Basics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          <div class="project-filter reveal">
-            <button class="project-filter__btn is-active" data-category="all" type="button">All</button>
-            <button class="project-filter__btn" data-category="ai" type="button">AI</button>
-            <button class="project-filter__btn" data-category="web" type="button">Web</button>
-            <button class="project-filter__btn" data-category="mobile" type="button">Mobile</button>
-            <button class="project-filter__btn" data-category="backend" type="button">Backend</button>
-          </div>
+        <!-- Projects Section -->
+        <section class="section min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8" id="projects">
+            <div class="max-w-6xl mx-auto w-full">
+                <h2 class="text-4xl md:text-5xl font-bold font-bebas tracking-wider mb-12 reveal">Featured Projects</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="reveal group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 backdrop-blur-xl hover:border-purple-500/50 transition">
+                        <div class="p-8 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                                    <i class='bx bxs-brain text-xl text-purple-400'></i>
+                                </div>
+                                <h3 class="text-2xl font-bold">AI Chat System</h3>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Intelligent chatbot with natural language processing capabilities. Integrated with multiple AI models for enhanced conversational abilities.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">Python</span>
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium">NLP</span>
+                                <span class="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-xs font-medium">API</span>
+                            </div>
+                            <div class="pt-4">
+                                <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="text-purple-400 hover:text-purple-300 font-semibold text-sm flex items-center gap-2">
+                                    View Project <i class='bx bx-right-arrow-alt'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="project-grid">
-            <article class="project-card reveal" data-category="ai web">
-              <img src="img/ai_face_swapper.jpeg" alt="AI face swapper project preview" class="project-card__image" />
-              <span class="project-card__tag">AI / Vision</span>
-              <h3>AI Face Swapper using Celebrity Faces</h3>
-              <p>Celebrity face identification and swapping workflow built with a focus on visual experimentation and AI integration.</p>
-              <div class="project-card__meta"><span>Python</span><span>Computer Vision</span><span>OpenCV</span></div>
-              <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="project-card__link">View on GitHub</a>
-            </article>
-            <article class="project-card reveal" data-category="ai backend">
-              <img src="img/IOT_driver_drowisnesss.jpeg" alt="IoT drowsiness detection project preview" class="project-card__image" />
-              <span class="project-card__tag">IoT / Safety</span>
-              <h3>IoT Driver Drowsiness Detection System</h3>
-              <p>Night driving fatigue detection concept built to improve road safety through sensor-driven analysis.</p>
-              <div class="project-card__meta"><span>Python</span><span>IoT</span><span>AI</span></div>
-              <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="project-card__link">View on GitHub</a>
-            </article>
-            <article class="project-card reveal" data-category="ai">
-              <img src="img/autisium_detction.jpeg" alt="Autism detection AI project preview" class="project-card__image" />
-              <span class="project-card__tag">Healthcare AI</span>
-              <h3>Autism Spectrum Disorder Detection</h3>
-              <p>Detection and analysis system using model-driven inference with an emphasis on clarity and structure.</p>
-              <div class="project-card__meta"><span>YOLOv5</span><span>AI</span><span>Research</span></div>
-              <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="project-card__link">View on GitHub</a>
-            </article>
-            <article class="project-card reveal" data-category="backend web">
-              <img src="img/Electricty_bill_system.jpeg" alt="Electricity billing system preview" class="project-card__image" />
-              <span class="project-card__tag">Business Apps</span>
-              <h3>Electricity Billing System</h3>
-              <p>Utility management system for home electronics with predictable billing and clean process flow.</p>
-              <div class="project-card__meta"><span>Spring Boot</span><span>MySQL</span><span>Java</span></div>
-              <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="project-card__link">View on GitHub</a>
-            </article>
-            <article class="project-card reveal" data-category="backend web">
-              <img src="img/rent.jpeg" alt="Vehicle rental platform preview" class="project-card__image" />
-              <span class="project-card__tag">Platform</span>
-              <h3>Vehicle Rental Service Platform</h3>
-              <p>Car rental management system designed around usability, admin control, and organized data handling.</p>
-              <div class="project-card__meta"><span>Java</span><span>MySQL</span><span>Spring Boot</span></div>
-              <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="project-card__link">View on GitHub</a>
-            </article>
-            <article class="project-card reveal" data-category="web">
-              <img src="img/weather.webp" alt="Weather app preview" class="project-card__image" />
-              <span class="project-card__tag">API / Utility</span>
-              <h3>Meteorological Application</h3>
-              <p>Weather app powered by API calls and streamlined for practical forecasting use.</p>
-              <div class="project-card__meta"><span>JavaScript</span><span>API</span><span>Frontend</span></div>
-              <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="project-card__link">View on GitHub</a>
-            </article>
-            <article class="project-card reveal" data-category="web backend">
-              <img src="img/netflic.jpeg" alt="E-commerce dashboard preview" class="project-card__image" />
-              <span class="project-card__tag">Web App</span>
-              <h3>E-Commerce Dashboard</h3>
-              <p>Full-featured product management dashboard with real-time analytics and inventory tracking system.</p>
-              <div class="project-card__meta"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
-              <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="project-card__link">View on GitHub</a>
-            </article>
-            <article class="project-card reveal" data-category="ai backend">
-              <img src="img1/nlp.png" alt="Text analysis engine preview" class="project-card__image" />
-              <span class="project-card__tag">NLP / AI</span>
-              <h3>Text Analysis & Classification Engine</h3>
-              <p>Advanced natural language processing system for sentiment analysis and text categorization at scale.</p>
-              <div class="project-card__meta"><span>Python</span><span>NLP</span><span>Transformers</span></div>
-              <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="project-card__link">View on GitHub</a>
-            </article>
-            <article class="project-card reveal" data-category="mobile">
-              <img src="img1/carrental.jpg" alt="Fitness tracking app preview" class="project-card__image" />
-              <span class="project-card__tag">Mobile / Cross-Platform</span>
-              <h3>Fitness Tracking Application</h3>
-              <p>Cross-platform mobile app for tracking workouts, nutrition, and fitness goals with AI-powered recommendations.</p>
-              <div class="project-card__meta"><span>Flutter</span><span>Firebase</span><span>Dart</span></div>
-              <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="project-card__link">View on GitHub</a>
-            </article>
-          </div>
-        </div>
-      </section>
+                    <div class="reveal group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 backdrop-blur-xl hover:border-pink-500/50 transition">
+                        <div class="p-8 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-pink-500/20 rounded-lg flex items-center justify-center">
+                                    <i class='bx bxs-briefcase text-xl text-pink-400'></i>
+                                </div>
+                                <h3 class="text-2xl font-bold">Business Dashboard</h3>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Full-stack analytics dashboard with real-time data visualization and reporting capabilities for business intelligence.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-xs font-medium">HTML/CSS/JS</span>
+                                <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs font-medium">Data Viz</span>
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium">Analytics</span>
+                            </div>
+                            <div class="pt-4">
+                                <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="text-pink-400 hover:text-pink-300 font-semibold text-sm flex items-center gap-2">
+                                    View Project <i class='bx bx-right-arrow-alt'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-      <section class="section" id="work">
-        <div class="bd-grid">
-          <div class="section-heading reveal">
-            <span class="eyebrow">Timeline</span>
-            <h2>Milestones and recognition.</h2>
-          </div>
+                    <div class="reveal group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 backdrop-blur-xl hover:border-blue-500/50 transition">
+                        <div class="p-8 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                                    <i class='bx bxs-cloud text-xl text-blue-400'></i>
+                                </div>
+                                <h3 class="text-2xl font-bold">Cloud Storage Platform</h3>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Secure cloud storage solution with file management, sharing, and collaborative features.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">JavaScript</span>
+                                <span class="px-3 py-1 bg-orange-500/20 text-orange-300 rounded-full text-xs font-medium">Storage</span>
+                                <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-medium">Security</span>
+                            </div>
+                            <div class="pt-4">
+                                <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="text-blue-400 hover:text-blue-300 font-semibold text-sm flex items-center gap-2">
+                                    View Project <i class='bx bx-right-arrow-alt'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="timeline-grid">
-            <article class="timeline-card reveal">
-              <span class="timeline-card__date">March 2024</span>
-              <h3>Certified Python Associate Programmer</h3>
-              <p>Validated strong foundational Python programming skills with a globally recognized certification.</p>
-            </article>
-            <article class="timeline-card reveal">
-              <span class="timeline-card__date">July 2024</span>
-              <h3>Fintech Council Member of India</h3>
-              <p>Recognized for meaningful contribution and participation in financial technology circles.</p>
-            </article>
-            <article class="timeline-card reveal">
-              <span class="timeline-card__date">August 2023</span>
-              <h3>Red Hat Application Developer</h3>
-              <p>Showcased proficiency in building and managing enterprise-level Java applications.</p>
-            </article>
-            <article class="timeline-card reveal">
-              <span class="timeline-card__date">May 2024</span>
-              <h3>Full-Stack Developer Workshop</h3>
-              <p>Successfully completed intensive hands-on training in modern full-stack development practices.</p>
-            </article>
-            <article class="timeline-card reveal">
-              <span class="timeline-card__date">February 2024</span>
-              <h3>AI & Machine Learning Bootcamp</h3>
-              <p>Graduated from comprehensive AI bootcamp with specialization in computer vision and deep learning.</p>
-            </article>
-            <article class="timeline-card reveal">
-              <span class="timeline-card__date">January 2024</span>
-              <h3>JavaScript Master Certification</h3>
-              <p>Earned advanced certification in JavaScript, advanced DOM manipulation, and asynchronous programming.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+                    <div class="reveal group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 backdrop-blur-xl hover:border-green-500/50 transition">
+                        <div class="p-8 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
+                                    <i class='bx bxs-bolt text-xl text-green-400'></i>
+                                </div>
+                                <h3 class="text-2xl font-bold">Performance Optimizer</h3>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Advanced tool for web performance analysis and optimization with recommendations for speed improvements.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium">JavaScript</span>
+                                <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-xs font-medium">Web APIs</span>
+                                <span class="px-3 py-1 bg-lime-500/20 text-lime-300 rounded-full text-xs font-medium">Performance</span>
+                            </div>
+                            <div class="pt-4">
+                                <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="text-green-400 hover:text-green-300 font-semibold text-sm flex items-center gap-2">
+                                    View Project <i class='bx bx-right-arrow-alt'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <section class="section" id="awards">
-        <div class="bd-grid">
-          <div class="section-heading reveal">
-            <span class="eyebrow">Achievements</span>
-            <h2>Certifications and recognition.</h2>
-          </div>
+        <!-- Contact Section -->
+        <section class="section min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8" id="contact">
+            <div class="max-w-4xl mx-auto w-full">
+                <h2 class="text-4xl md:text-5xl font-bold font-bebas tracking-wider mb-12 reveal">Get In Touch</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="reveal space-y-8">
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            Have a project in mind? Share your brief below and I’ll respond with a plan and next steps within 24 hours.
+                        </p>
 
-          <div class="awards-grid">
-            <article class="award-card reveal">
-              <div class="award-card__icon"><i class='bx bxs-medal'></i></div>
-              <h3>Python Associate Programmer</h3>
-              <p>PCAP Certified - Python validation from the Python Institute</p>
-              <span class="award-date">March 2024</span>
-            </article>
-            <article class="award-card reveal">
-              <div class="award-card__icon"><i class='bx bxs-trophy'></i></div>
-              <h3>Red Hat Developer</h3>
-              <p>Enterprise Java and Spring Boot certification</p>
-              <span class="award-date">August 2023</span>
-            </article>
-            <article class="award-card reveal">
-              <div class="award-card__icon"><i class='bx bxs-star'></i></div>
-              <h3>Fintech Council Member</h3>
-              <p>Recognized participant in Financial Technology community</p>
-              <span class="award-date">July 2024</span>
-            </article>
-            <article class="award-card reveal">
-              <div class="award-card__icon"><i class='bx bxs-certification'></i></div>
-              <h3>Full-Stack Developer</h3>
-              <p>Demonstrated expertise across frontend, backend, and database technologies</p>
-              <span class="award-date">Ongoing</span>
-            </article>
-            <article class="award-card reveal">
-              <div class="award-card__icon"><i class='bx bxs-brain'></i></div>
-              <h3>AI & ML Specialist</h3>
-              <p>Advanced certification in Machine Learning and Artificial Intelligence applications</p>
-              <span class="award-date">May 2024</span>
-            </article>
-            <article class="award-card reveal">
-              <div class="award-card__icon"><i class='bx bxs-code'></i></div>
-              <h3>JavaScript Master</h3>
-              <p>Expert-level certification in modern JavaScript and asynchronous programming</p>
-              <span class="award-date">January 2024</span>
-            </article>
-            <article class="award-card reveal">
-              <div class="award-card__icon"><i class='bx bxs-cloud'></i></div>
-              <h3>Cloud Architecture Expert</h3>
-              <p>Proficiency in cloud services, DevOps, and deployment infrastructure design</p>
-              <span class="award-date">April 2024</span>
-            </article>
-            <article class="award-card reveal">
-              <div class="award-card__icon"><i class='bx bxs-data'></i></div>
-              <h3>Data Science Specialist</h3>
-              <p>Certified in data analysis, visualization, and statistical modeling techniques</p>
-              <span class="award-date">March 2024</span>
-            </article>
-          </div>
-        </div>
-      </section>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class='bx bxs-envelope text-purple-400'></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-white mb-1">Email</h3>
+                                    <a href="mailto:sabyakumar2003@gmail.com" class="text-slate-300 hover:text-purple-400 transition">
+                                        sabyakumar2003@gmail.com
+                                    </a>
+                                </div>
+                            </div>
 
-      <section class="section" id="contact">
-        <div class="bd-grid">
-          <div class="section-heading reveal">
-            <span class="eyebrow">Contact</span>
-            <h2>Let’s build something serious.</h2>
-            <p>Drop a message if you want to collaborate, commission work, or just talk product and systems.</p>
-          </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-pink-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class='bx bxs-phone text-pink-400'></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-white mb-1">Phone</h3>
+                                    <a href="tel:+1234567890" class="text-slate-300 hover:text-pink-400 transition">
+                                        +1 (234) 567-890
+                                    </a>
+                                </div>
+                            </div>
 
-          <div class="contact-grid reveal">
-            <form id="form" class="contact-form">
-              <input type="text" name="website" id="website" class="honeypot" tabindex="-1" autocomplete="off" />
-              <label>
-                Your Name
-                <input type="text" name="from_name" id="from_name" placeholder="John Doe" required />
-              </label>
-              <label>
-                Your Email
-                <input type="email" name="from_email" id="from_email" placeholder="john@example.com" required />
-              </label>
-              <label>
-                Your Phone Number
-                <input type="tel" name="from_phone" id="from_phone" placeholder="+1234567890" />
-              </label>
-              <label>
-                Your Message
-                <textarea name="message" id="message" rows="6" maxlength="2000" placeholder="Tell me about your idea. You can include image links in the format: https://.../image1.jpg" required></textarea>
-              </label>
-              <label>
-                Attach files (optional)
-                <input type="file" name="attachments" id="attachments" multiple />
-                <small style="display:block;color:var(--muted);margin-top:6px;">Attach any files (images, docs, zips). They will be uploaded with your message.</small>
-              </label>
-              <label class="consent-wrap">
-                <input type="checkbox" id="consent" required />
-                <span>I agree to have my submitted information stored for contact purposes.</span>
-              </label>
-              <div class="char-count">2000 characters left</div>
-              <input type="submit" id="button" value="Send Message" class="button button--primary contact-form__button" />
-              <p class="success-message" style="display:none;">Email sent successfully.</p>
-              <p class="error-message" style="display:none;">Failed to send email.</p>
-            </form>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <i class='bx bxl-linkedin text-blue-400'></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-white mb-1">LinkedIn</h3>
+                                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="text-slate-300 hover:text-blue-400 transition">
+                                        Visit My Profile
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- contact-side removed: details moved to footer for a cleaner corporate-style layout -->
-          </div>
-        </div>
-      </section>
+                    <div class="reveal">
+                        <form id="contact-form" class="space-y-4 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 backdrop-blur-xl rounded-2xl p-8">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-slate-300 mb-2">Name</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    required 
+                                    class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition"
+                                    placeholder="Your name"
+                                />
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-slate-300 mb-2">Email</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required 
+                                    class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition"
+                                    placeholder="your@email.com"
+                                />
+                            </div>
+
+                            <div>
+                                <label for="subject" class="block text-sm font-semibold text-slate-300 mb-2">Subject</label>
+                                <input 
+                                    type="text" 
+                                    id="subject" 
+                                    name="subject" 
+                                    required 
+                                    class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition"
+                                    placeholder="Subject"
+                                />
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-semibold text-slate-300 mb-2">Message <span class="text-slate-400">(<span id="char-count">0</span>/500)</span></label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    required 
+                                    maxlength="500"
+                                    rows="5"
+                                    class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition resize-none"
+                                    placeholder="Your message..."
+                                ></textarea>
+                            </div>
+
+                            <button 
+                                type="submit" 
+                                class="w-full py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition transform hover:scale-105 flex items-center justify-center gap-2"
+                            >
+                                <span>Send Message</span>
+                                <i class='bx bx-send text-lg'></i>
+                            </button>
+
+                            <p id="form-status" class="text-sm text-slate-400 text-center hidden"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="footer">
-      <div class="bd-grid footer__grid">
-        <div>
-          <h3>Sabyasachi Kumar</h3>
-          <p>Developer portfolio with a clean dashboard aesthetic and a strong product-first vibe. Building the future, one project at a time.</p>
+    <!-- Footer -->
+    <footer class="border-t border-slate-700/50 bg-slate-950/50 backdrop-blur py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="text-slate-400 text-sm">
+                    &copy; 2026 Sabyasachi Kumar. All rights reserved.
+                </div>
+                <div class="flex gap-6">
+                    <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-purple-400 transition">
+                        <i class='bx bxl-github text-2xl'></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-blue-400 transition">
+                        <i class='bx bxl-linkedin text-2xl'></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition">
+                        <i class='bx bxl-twitter text-2xl'></i>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div>
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#project">Projects</a></li>
-            <li><a href="#work">Timeline</a></li>
-            <li><a href="#awards">Awards</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Technologies</h4>
-          <ul>
-            <li>Python & AI</li>
-            <li>Full-Stack Development</li>
-            <li>Frontend & Backend</li>
-            <li>Machine Learning</li>
-            <li>Database Design</li>
-            <li>Cloud Computing</li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <p class="footer-contact"><strong>Email:</strong> <a href="mailto:sabyakumar2003@gmail.com">sabyakumar2003@gmail.com</a></p>
-          <p class="footer-contact"><strong>Location:</strong> Australia</p>
-          <p class="footer-contact"><strong>GitHub:</strong> <a href="https://github.com/2100031988" target="_blank" rel="noreferrer">2100031988</a></p>
-          <p class="footer-contact"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sabyasachi-kumar-5a423b226/?skipRedirect=true" target="_blank" rel="noreferrer">sabyasachi-kumar</a></p>
-          <p class="footer-contact"><strong>Availability:</strong> Open to collaborations and contract work</p>
-        </div>
-        <div>
-          <h4>Newsletter</h4>
-          <p>Subscribe for occasional updates, project releases, and case studies.</p>
-          <form id="footer-newsletter" class="footer-newsletter">
-            <input type="email" name="newsletter_email" placeholder="you@example.com" required />
-            <button type="submit" class="button button--primary">Subscribe</button>
-            <p class="newsletter-success" style="display:none;">Subscribed — thanks!</p>
-          </form>
-        </div>
-      </div>
-      <div class="footer__divider"></div>
-      <div class="footer__bottom">
-        <p>&copy; 2026 Sabyasachi Kumar. All rights reserved.</p>
-        <p>Building amazing digital experiences | Powered by Innovation</p>
-      </div>
     </footer>
 
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-      <i class='bx bx-up-arrow-alt'></i>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition transform hover:scale-110" aria-label="Back to top">
+        <i class='bx bx-up-arrow-alt text-xl'></i>
     </button>
 
-    <script src="script.js"></script>
-  </body>
+    <script src="script.js" defer></script>
+</body>
 </html>
