@@ -323,3 +323,73 @@ textarea:invalid:not(:placeholder-shown) {
         color: black;
     }
 }
+
+.hero-panel img,
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.project-card {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(168, 85, 247, 0.45);
+    box-shadow: 0 22px 50px rgba(15, 23, 42, 0.45);
+}
+
+.project-card-content {
+    padding: 2rem;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.project-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.85rem;
+    border-radius: 9999px;
+    background: rgba(148, 163, 184, 0.12);
+    color: #d8d8ff;
+    font-size: 0.75rem;
+}
+
+.achievement-card {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.88), rgba(30, 41, 59, 0.95));
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+    transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(168, 85, 247, 0.32);
+}
+
+.achievement-card span {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+}
+
+.achievement-card h3 {
+    line-height: 1.1;
+}
