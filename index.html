@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Sabyasachi Kumar — Developer portfolio showcasing AI, full-stack, and cloud engineering work." />
-    <link rel="icon" href="img/sabya_123_18q_icon.ico" type="image/x-icon" />
+    <meta name="description" content="Portfolio of Sabyasachi Kumar, featuring projects in AI, machine learning, and full-stack development." />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
-    <title>Sabya Kumar: Portfolio</title>
+    <title>Sabyasachi Kumar | Portfolio</title>
 </head>
 <body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-x-hidden">
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 w-0 z-50 transition-all duration-300"></div>
+
+
+<!------------------ Header / Navigation ------------------>
+
 
     <header class="l-header fixed top-0 left-0 w-full z-30 transition-all duration-300" id="header">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    Sabyasachi
+                    Sabyasachi Kumar
                 </a>
 
                 <div class="hidden md:flex items-center gap-8">
@@ -62,368 +67,522 @@
     </header>
 
     <main class="l-main pt-20">
+
+
+<!------------------ Hero Section ------------------>
+
+
         <section class="hero section min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20" id="home">
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
-                <div class="reveal space-y-8">
-                    <span class="text-purple-400 font-semibold text-sm tracking-wider uppercase block mb-4">Full-stack product engineering</span>
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black font-bebas leading-tight bg-gradient-to-r from-white via-purple-200 to-pink-300 bg-clip-text text-transparent mb-6">
-                        I build polished digital experiences, AI workflows, and cloud-ready products.
+            <div class="hero-layout max-w-7xl mx-auto w-full">
+                <div class="hero-copy reveal">
+                    <span class="hero-eyebrow">Developer · Prompt Engineer · AI postgraduate</span>
+                    <h1 class="hero-title font-black font-bebas bg-gradient-to-r from-white via-purple-200 to-pink-300 bg-clip-text text-transparent">
+                        I build practical AI and web tools.
                     </h1>
-                    <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-                        Passionate Full-Stack Developer and AI enthusiast with hands-on experience in Java, Python, cloud, and web development. I build modern software for ambitious teams, powered by performance, polish, and practicality.
+                    <p class="hero-description">
+                        I'm pursuing a master's degree in Artificial Intelligence and Machine Learning at Adelaide University. I turn careful model evaluation and practical engineering into clear, useful outcomes.
                     </p>
 
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-4 py-2 bg-slate-700/70 border border-slate-600/60 rounded-full text-slate-100 text-sm font-medium">Open to internships & roles</span>
-                        <span class="px-4 py-2 bg-slate-700/40 border border-slate-600/50 rounded-full text-slate-300 text-sm">AI • Cloud • Web Apps</span>
-                        <span class="px-4 py-2 bg-slate-700/40 border border-slate-600/50 rounded-full text-slate-300 text-sm">Research & product delivery</span>
+                    <div class="hero-focus-list" aria-label="Areas of focus">
+                        <span>Machine learning</span>
+                        <span>Full-stack development</span>
+                        <span>AI evaluation</span>
                     </div>
 
-                    <div class="flex flex-wrap gap-4 pt-4">
-                        <a href="https://drive.google.com/file/d/1cwCtFit4lN3cPUkLJ9v966t7JAYQG2CM/view?usp=sharing" target="_blank" rel="noreferrer" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg font-semibold transition transform hover:scale-105">
+                    <div class="hero-actions">
+                        <a href="https://drive.google.com/file/d/1GtjLEAzC6dYNUANRFolzyzfYw7KYWohC/view?usp=sharing" target="_blank" rel="noreferrer" class="hero-action hero-action--primary">
                             Download CV
                         </a>
-                        <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="px-8 py-3 border border-purple-400/50 rounded-lg font-semibold transition hover:bg-purple-400/10">
-                            View GitHub
-                        </a>
-                        <a href="https://www.linkedin.com/in/sabyasachi-kumar-5a423b226/" target="_blank" rel="noreferrer" class="w-full sm:w-auto px-8 py-3 border border-slate-700/60 rounded-lg font-semibold text-white transition hover:bg-slate-800/80">
-                            Connect on LinkedIn
+                        <a href="https://www.linkedin.com/in/sabyasachi-kumar-5a423b226/" target="_blank" rel="noreferrer" class="hero-action hero-action--secondary">
+                            <i class="bx bxl-linkedin" aria-hidden="true"></i> Connect on LinkedIn
                         </a>
                     </div>
                 </div>
 
-                <div class="reveal">
-                    <div class="hero-panel bg-slate-900/80 border border-slate-700/60 backdrop-blur-xl rounded-[2rem] p-8 shadow-2xl overflow-hidden">
-                        <div class="flex items-start justify-between mb-6">
-                            <h4 class="text-slate-400 uppercase tracking-[0.18em] text-sm">Live Status</h4>
-                            <span class="inline-flex items-center gap-2 bg-emerald-700/80 text-white px-3 py-1 rounded-full text-sm">
-                                <span class="w-2 h-2 bg-emerald-400 rounded-full inline-block"></span>
-                                Online
-                            </span>
+                <div class="hero-visual reveal">
+                    <div class="github-panel">
+                        <div class="github-panel-topline">
+                            <span>From my GitHub</span>
+                            <span class="github-sync"><span class="github-sync-dot"></span><span id="github-sync-status" aria-live="polite">Fetching profile</span></span>
+                        </div>
+                        <div class="github-profile">
+                            <a class="github-avatar-link" href="https://github.com/2100031988" target="_blank" rel="noreferrer" aria-label="Open Sabya Kumar's GitHub profile">
+                                <img id="github-avatar" src="https://avatars.githubusercontent.com/u/110450040?v=4" alt="GitHub profile photo of Sabya Kumar" fetchpriority="high">
+                            </a>
+                            <div class="github-identity">
+                                <h2 id="github-display-name">Sabya Kumar</h2>
+                                <a href="https://github.com/2100031988" target="_blank" rel="noreferrer">@2100031988 <i class="bx bx-link-external" aria-hidden="true"></i></a>
+                            </div>
+                            <a class="github-open-link" href="https://github.com/2100031988" target="_blank" rel="noreferrer" aria-label="Visit GitHub profile"><i class="bx bxl-github" aria-hidden="true"></i></a>
                         </div>
 
-                        <div class="grid gap-4 sm:grid-cols-2 mb-6">
-                            <div class="status-card rounded-xl p-6 bg-slate-900/70 border border-slate-700/50">
-                                <p class="text-4xl font-bold text-purple-300 text-center">06</p>
-                                <p class="text-xs text-slate-400 uppercase tracking-wider text-center mt-3">Projects</p>
-                            </div>
-                            <div class="status-card rounded-xl p-6 bg-slate-900/70 border border-slate-700/50">
-                                <p class="text-4xl font-bold text-pink-400 text-center">09+</p>
-                                <p class="text-xs text-slate-400 uppercase tracking-wider text-center mt-3">Technologies</p>
-                            </div>
-                            <div class="status-card rounded-xl p-6 bg-slate-900/70 border border-slate-700/50">
-                                <p class="text-4xl font-bold text-sky-400 text-center">AI</p>
-                                <p class="text-xs text-slate-400 uppercase tracking-wider text-center mt-3">Focus</p>
-                            </div>
-                            <div class="status-card rounded-xl p-6 bg-slate-900/70 border border-slate-700/50">
-                                <p class="text-4xl font-bold text-orange-400 text-center">24/7</p>
-                                <p class="text-xs text-slate-400 uppercase tracking-wider text-center mt-3">Building</p>
-                            </div>
+                        <div class="github-stats" aria-label="GitHub profile statistics">
+                            <div><strong id="github-repo-count">--</strong><span>Public repositories</span></div>
+                            <div><strong id="github-follower-count">--</strong><span>People following</span></div>
                         </div>
 
-                        <div class="mt-4 bg-slate-900/90 border border-slate-700/50 rounded-xl p-4">
-                            <pre class="language-js bg-transparent text-slate-200 text-sm overflow-x-auto"><code>// Status
-const status = "building"</code></pre>
+                        <div class="github-recent-heading">
+                            <h3>Recently updated</h3>
+                            <a href="https://github.com/2100031988?tab=repositories" target="_blank" rel="noreferrer">All repositories <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+                        </div>
+                        <ul class="github-repository-list" id="github-repository-list" aria-live="polite">
+                            <li class="github-repository-placeholder">Loading recent repositories…</li>
+                        </ul>
+                        <div class="github-panel-footer">
+                            <span>Public activity · GitHub API</span>
+                            <span id="github-last-updated">Updates automatically</span>
                         </div>
                     </div>
+                    <div class="hero-orbit-label" aria-hidden="true"><span>01</span> Learn · Build · Refine</div>
                 </div>
             </div>
         </section>
+
+
+<!------------------ About Section ------------------>
+
 
         <section class="section min-h-screen py-20 px-4 sm:px-6 lg:px-8" id="about">
-            <div class="max-w-6xl mx-auto w-full">
-                <div class="grid gap-12 xl:grid-cols-[1.4fr_1fr] items-start">
-                    <div class="reveal space-y-8">
-                        <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                            <div>
-                                <span class="text-purple-400 uppercase tracking-[0.2em] text-sm">About Me</span>
-                                <h2 class="text-4xl md:text-5xl font-bold font-bebas tracking-wider mt-4">I build polished digital products with AI, cloud, and modern UX.</h2>
-                            </div>
-                            <div class="status-online">
-                                <span class="status-dot"></span>
-                                <span class="text-slate-300 text-sm">Available now</span>
-                            </div>
-                        </div>
-                        <p class="text-lg text-slate-300 leading-relaxed max-w-3xl">
-                            I’m a developer who blends AI, cloud architecture, and product-focused engineering. My work spans from smart workflows to scalable web software that performs under real business constraints.
-                        </p>
-                        <div class="grid gap-4 md:grid-cols-2">
-                            <div class="glass rounded-3xl p-6 border border-slate-700/50">
-                                <span class="text-purple-400 uppercase tracking-[0.2em] text-xs">Academic Strength</span>
-                                <p class="font-semibold text-white text-xl mt-4">Speech Recognition Research</p>
-                            </div>
-                            <div class="glass rounded-3xl p-6 border border-slate-700/50">
-                                <span class="text-pink-400 uppercase tracking-[0.2em] text-xs">Certifications</span>
-                                <p class="font-semibold text-white text-xl mt-4">AWS, Red Hat, TensorFlow, Python</p>
-                            </div>
-                        </div>
-                        <div class="pt-4">
-                            <h3 class="text-purple-400 font-semibold mb-4 uppercase tracking-wider text-sm">Key Strengths</h3>
-                            <ul class="space-y-3 text-slate-300">
-                                <li class="flex items-start gap-3"><span class="mt-1 w-2 h-2 bg-purple-500 rounded-full"></span>Full-stack development with strong UI/UX sensibility.</li>
-                                <li class="flex items-start gap-3"><span class="mt-1 w-2 h-2 bg-purple-500 rounded-full"></span>AI/ML integration, speech systems, and automation workflows.</li>
-                                <li class="flex items-start gap-3"><span class="mt-1 w-2 h-2 bg-purple-500 rounded-full"></span>Cloud-ready solutions with deployment, Docker, and CI/CD support.</li>
-                                <li class="flex items-start gap-3"><span class="mt-1 w-2 h-2 bg-purple-500 rounded-full"></span>Research-backed problem solving and polished project delivery.</li>
-                            </ul>
+            <div class="about-shell max-w-7xl mx-auto w-full">
+                <header class="about-heading reveal">
+                    <span class="about-kicker">About / Profile</span>
+                    <div class="about-title-row">
+                        <h2 class="text-4xl md:text-5xl font-bold font-bebas tracking-wider">Thoughtful AI. Useful outcomes.</h2>
+                        <div class="status-online">
+                            <span class="status-dot" aria-hidden="true"></span>
+                            <span class="text-slate-300 text-sm">Available now</span>
                         </div>
                     </div>
-                    <div class="reveal glass rounded-[2rem] p-8 border border-slate-700/50 bg-slate-950/50 backdrop-blur-xl shadow-2xl">
-                        <div class="space-y-6">
-                            <span class="text-slate-400 uppercase tracking-[0.2em] text-xs">Personal Summary</span>
-                            <h3 class="text-3xl font-bold text-white">Building the next generation of digital products.</h3>
-                            <p class="text-slate-300 leading-relaxed mt-3">Passionate Full-Stack Developer with a strong interest in AI, cloud, and elegant user experiences. I deliver polished software for ambitious teams and keep every product focused on real outcomes.</p>
-                            <ul class="mt-4 space-y-3 text-slate-300">
-                                <li>Published researcher in speech recognition and intelligent systems.</li>
-                                <li>Experience in Java, Python, cloud, web, and AI-driven products.</li>
-                                <li>Strong track record of academic projects, internships, and real deployments.</li>
-                                <li>Fast learner with a modern product mindset and strong attention to detail.</li>
+                </header>
+
+                <div class="about-layout">
+                    <article class="about-profile reveal">
+                        <span class="about-card-label">How I work</span>
+                        <p class="about-summary">I'm a Machine Learning postgraduate focused on evaluating AI carefully, solving practical problems, and understanding the data behind a result. I value clear teamwork, curiosity, and getting the details right.</p>
+
+                        <div class="about-strengths">
+                            <div class="about-strengths-heading">
+                                <h3>Key strengths</h3>
+                                <span>How I contribute</span>
+                            </div>
+                            <ul class="about-strength-list">
+                                <li><span aria-hidden="true">01</span><p>Collaborative — led a core project module and contributed to two hackathon builds.</p></li>
+                                <li><span aria-hidden="true">02</span><p>Clear communicator with client-facing and cross-functional team experience.</p></li>
+                                <li><span aria-hidden="true">03</span><p>Adaptable across ML research, backend tools, and practical problem-solving.</p></li>
                             </ul>
                         </div>
-                    </div>
+                    </article>
+
+                    <article class="about-experience reveal">
+                        <div class="about-experience-heading">
+                            <span class="about-card-label">Work experience</span>
+                            <span class="about-role-count">02 roles</span>
+                        </div>
+                        <h3>Experience across AI and fintech.</h3>
+                        <p class="about-experience-intro">Evaluating AI outputs and supporting live platforms taught me to work carefully, communicate clearly, and solve issues with users in mind.</p>
+
+                        <div class="about-timeline">
+                            <article class="about-role">
+                                <span class="about-role-index" aria-hidden="true">01</span>
+                                <div>
+                                    <div class="about-role-meta"><span>Freelance · Remote</span><span>Oct 2024 – May 2025</span></div>
+                                    <h4>AI Trainer &amp; Prompt Engineer</h4>
+                                    <p class="about-role-company">Outlier</p>
+                                    <p class="about-role-description">Evaluated and refined AI-generated responses using structured labels and prompt engineering to improve output quality.</p>
+                                </div>
+                            </article>
+                            <article class="about-role">
+                                <span class="about-role-index" aria-hidden="true">02</span>
+                                <div>
+                                    <div class="about-role-meta"><span>Fintech support</span><span>Aug 2024 – Jan 2025</span></div>
+                                    <h4>Tech Support Executive</h4>
+                                    <p class="about-role-company">Fintech Council of India</p>
+                                    <p class="about-role-description">Resolved issues on live fintech platforms, supporting users and helping maintain reliable service.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </article>
                 </div>
+
+                <aside class="about-note reveal">
+                    <span class="about-note-label">How I approach the work</span>
+                    <p>I start by understanding the data, the constraints, and the problem a person needs solved then I test ideas against evidence, refine what works, and communicate 
+                        the result clearly — whether I’m evaluating an AI output or supporting a live platform.</p>
+                </aside>
             </div>
         </section>
+
+
+<!------------------ Skills Section ------------------>    
+
 
         <section class="section min-h-screen py-20 px-4 sm:px-6 lg:px-8" id="skills">
             <div class="max-w-6xl mx-auto w-full">
                 <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-12">
                     <div>
-                        <h2 class="text-4xl md:text-5xl font-bold font-bebas tracking-wider reveal">Skills & Technologies</h2>
-                        <p class="text-slate-400 max-w-2xl mt-3">Modern web, backend, AI, and cloud tooling optimized for a polished digital experience.</p>
+                        <span class="text-purple-400 uppercase tracking-[0.2em] text-sm reveal">Skills & Technologies</span>
+                        <h2 class="text-4xl md:text-5xl font-bold font-bebas tracking-wider reveal mt-3">The stack behind the work.</h2>
+                        <p class="text-slate-400 max-w-2xl mt-3 reveal">Languages, ML frameworks, and tools I've actually shipped projects with.</p>
                     </div>
-                    <span class="text-slate-400 text-sm">Strong, clean, and easy to maintain.</span>
                 </div>
-                <div class="grid gap-8 md:grid-cols-3">
-                    <div class="reveal bg-gradient-to-br from-slate-900/80 to-slate-950/80 border border-slate-700/60 rounded-[2rem] p-8 shadow-lg">
+
+                <div class="grid gap-6 md:grid-cols-3">
+                    <div class="reveal bg-gradient-to-br from-slate-900/80 to-slate-950/80 border border-slate-700/60 rounded-[2rem] p-8 shadow-lg hover:border-purple-500/40 transition-colors duration-300">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-12 h-12 bg-purple-500/15 rounded-3xl flex items-center justify-center">
-                                <i class='bx bxs-paint text-2xl text-purple-400'></i>
+                            <div class="w-12 h-12 bg-purple-500/15 rounded-2xl flex items-center justify-center">
+                                <i class='bx bxs-code-alt text-2xl text-purple-400'></i>
                             </div>
-                            <h3 class="text-xl font-bold">Frontend</h3>
-                        </div>
-                        <ul class="space-y-3 text-slate-300">
-                            <li>HTML5 & CSS3</li>
-                            <li>JavaScript / TypeScript</li>
-                            <li>Tailwind, Bootstrap, responsive UI</li>
-                            <li>Modern UX and motion</li>
-                        </ul>
-                    </div>
-                    <div class="reveal bg-gradient-to-br from-slate-900/80 to-slate-950/80 border border-slate-700/60 rounded-[2rem] p-8 shadow-lg">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="w-12 h-12 bg-pink-500/15 rounded-3xl flex items-center justify-center">
-                                <i class='bx bxs-server text-2xl text-pink-400'></i>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Languages</h3>
+                                <p class="text-slate-500 text-xs mt-0.5">Core programming</p>
                             </div>
-                            <h3 class="text-xl font-bold">Backend</h3>
                         </div>
-                        <ul class="space-y-3 text-slate-300">
-                            <li>Python, Java, Spring Boot</li>
-                            <li>REST APIs & server-side logic</li>
-                            <li>Database design (SQL / NoSQL)</li>
-                            <li>Node/Express basics</li>
-                        </ul>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="flex items-center gap-2 bg-slate-800/60 border border-slate-700/50 rounded-xl px-3 py-2 hover:border-purple-400/50 hover:bg-slate-800 transition-all">
+                                <i class="devicon-python-plain colored text-lg"></i>
+                                <span class="text-sm text-slate-200">Python</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-slate-800/60 border border-slate-700/50 rounded-xl px-3 py-2 hover:border-purple-400/50 hover:bg-slate-800 transition-all">
+                                <i class="devicon-java-plain colored text-lg"></i>
+                                <span class="text-sm text-slate-200">Java</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-slate-800/60 border border-slate-700/50 rounded-xl px-3 py-2 hover:border-purple-400/50 hover:bg-slate-800 transition-all">
+                                <i class="devicon-r-plain colored text-lg"></i>
+                                <span class="text-sm text-slate-200">R</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="reveal bg-gradient-to-br from-slate-900/80 to-slate-950/80 border border-slate-700/60 rounded-[2rem] p-8 shadow-lg">
+
+                    <div class="reveal bg-gradient-to-br from-slate-900/80 to-slate-950/80 border border-slate-700/60 rounded-[2rem] p-8 shadow-lg hover:border-pink-500/40 transition-colors duration-300">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-12 h-12 bg-blue-500/15 rounded-3xl flex items-center justify-center">
+                            <div class="w-12 h-12 bg-pink-500/15 rounded-2xl flex items-center justify-center">
+                                <i class='bx bxs-brain text-2xl text-pink-400'></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">ML & Data</h3>
+                                <p class="text-slate-500 text-xs mt-0.5">Frameworks and libraries</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="flex items-center gap-2 bg-slate-800/60 border border-slate-700/50 rounded-xl px-3 py-2 hover:border-pink-400/50 hover:bg-slate-800 transition-all">
+                                <i class="devicon-tensorflow-original colored text-lg"></i>
+                                <span class="text-sm text-slate-200">TensorFlow</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-slate-800/60 border border-slate-700/50 rounded-xl px-3 py-2 hover:border-pink-400/50 hover:bg-slate-800 transition-all">
+                                <i class="devicon-numpy-original colored text-lg"></i>
+                                <span class="text-sm text-slate-200">NumPy</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-slate-800/60 border border-slate-700/50 rounded-xl px-3 py-2 hover:border-pink-400/50 hover:bg-slate-800 transition-all">
+                                <i class="devicon-pandas-original colored text-lg"></i>
+                                <span class="text-sm text-slate-200">Pandas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal bg-gradient-to-br from-slate-900/80 to-slate-950/80 border border-slate-700/60 rounded-[2rem] p-8 shadow-lg hover:border-blue-500/40 transition-colors duration-300">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-blue-500/15 rounded-2xl flex items-center justify-center">
                                 <i class='bx bxs-wrench text-2xl text-blue-400'></i>
                             </div>
-                            <h3 class="text-xl font-bold">Cloud & Tools</h3>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Tools</h3>
+                                <p class="text-slate-500 text-xs mt-0.5">Version control and analytics</p>
+                            </div>
                         </div>
-                        <ul class="space-y-3 text-slate-300">
-                            <li>Git, GitHub, CI/CD workflows</li>
-                            <li>AWS fundamentals & deployment</li>
-                            <li>Docker, containerization</li>
-                            <li>AI/ML integration and automation</li>
-                        </ul>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="flex items-center gap-2 bg-slate-800/60 border border-slate-700/50 rounded-xl px-3 py-2 hover:border-blue-400/50 hover:bg-slate-800 transition-all">
+                                <i class="devicon-git-plain colored text-lg"></i>
+                                <span class="text-sm text-slate-200">Git</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-slate-800/60 border border-slate-700/50 rounded-xl px-3 py-2 hover:border-blue-400/50 hover:bg-slate-800 transition-all">
+                                <i class="devicon-github-original colored text-lg"></i>
+                                <span class="text-sm text-slate-200">GitHub</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-slate-800/60 border border-slate-700/50 rounded-xl px-3 py-2 hover:border-blue-400/50 hover:bg-slate-800 transition-all">
+                                <i class='bx bxs-bar-chart-alt-2 text-lg text-blue-400'></i>
+                                <span class="text-sm text-slate-200">Tableau</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    <div class="achievement-card reveal">
-                        <p class="text-slate-400 text-sm uppercase tracking-[0.2em]">Languages</p>
-                        <p class="text-3xl font-bold text-white mt-3">Python / Java</p>
-                    </div>
-                    <div class="achievement-card reveal">
-                        <p class="text-slate-400 text-sm uppercase tracking-[0.2em]">Frameworks</p>
-                        <p class="text-3xl font-bold text-white mt-3">Spring / Tailwind</p>
-                    </div>
-                    <div class="achievement-card reveal">
-                        <p class="text-slate-400 text-sm uppercase tracking-[0.2em]">AI</p>
-                        <p class="text-3xl font-bold text-white mt-3">TensorFlow / NLP</p>
-                    </div>
-                    <div class="achievement-card reveal">
-                        <p class="text-slate-400 text-sm uppercase tracking-[0.2em]">Cloud</p>
-                        <p class="text-3xl font-bold text-white mt-3">AWS & Deployment</p>
-                    </div>
+
+                <div class="core-skills-grid">
+                    <article class="core-skill-card core-skill-card--ml reveal">
+                        <span class="core-skill-type">Core skill · 01</span>
+                        <h3>Machine Learning</h3>
+                        <details class="core-skill-disclosure">
+                            <summary><span>Explore core concepts</span><i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
+                            <div class="core-skill-concepts">
+                                <span><i class="bx bx-check-shield" aria-hidden="true"></i>Supervised learning</span>
+                                <span><i class="bx bx-git-compare" aria-hidden="true"></i>Classification</span>
+                                <span><i class="bx bx-line-chart" aria-hidden="true"></i>Regression</span>
+                                <span><i class="bx bx-slider-alt" aria-hidden="true"></i>Feature engineering</span>
+                                <span><i class="bx bx-bar-chart-alt-2" aria-hidden="true"></i>Model evaluation</span>
+                            </div>
+                        </details>
+                    </article>
+
+                    <article class="core-skill-card core-skill-card--deep reveal">
+                        <span class="core-skill-type">Core skill · 02</span>
+                        <h3>Deep Learning</h3>
+                        <details class="core-skill-disclosure">
+                            <summary><span>Explore core concepts</span><i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
+                            <div class="core-skill-concepts">
+                                <span><i class="bx bx-network-chart" aria-hidden="true"></i>Neural networks</span>
+                                <span><i class="bx bx-image" aria-hidden="true"></i>Convolutional networks</span>
+                                <span><i class="bx bx-git-branch" aria-hidden="true"></i>Backpropagation</span>
+                                <span><i class="bx bx-slider-alt" aria-hidden="true"></i>Regularization</span>
+                                <span><i class="bx bx-layer" aria-hidden="true"></i>Transfer learning</span>
+                            </div>
+                        </details>
+                    </article>
+
+                    <article class="core-skill-card core-skill-card--prompt reveal">
+                        <span class="core-skill-type">Applied · 03</span>
+                        <h3>Prompt Engineering</h3>
+                        <details class="core-skill-disclosure">
+                            <summary><span>Explore core concepts</span><i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
+                            <div class="core-skill-concepts">
+                                <span><i class="bx bx-message-square-detail" aria-hidden="true"></i>Instruction design</span>
+                                <span><i class="bx bx-book-content" aria-hidden="true"></i>Context &amp; examples</span>
+                                <span><i class="bx bx-list-check" aria-hidden="true"></i>Output constraints</span>
+                                <span><i class="bx bx-refresh" aria-hidden="true"></i>Iterative refinement</span>
+                                <span><i class="bx bx-check-double" aria-hidden="true"></i>Response evaluation</span>
+                            </div>
+                        </details>
+                    </article>
+
+                    <article class="core-skill-card core-skill-card--vision reveal">
+                        <span class="core-skill-type">Applied · 04</span>
+                        <h3>Computer Vision</h3>
+                        <details class="core-skill-disclosure">
+                            <summary><span>Explore core concepts</span><i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
+                            <div class="core-skill-concepts">
+                                <span><i class="bx bx-crop" aria-hidden="true"></i>Image preprocessing</span>
+                                <span><i class="bx bx-scan" aria-hidden="true"></i>Object detection</span>
+                                <span><i class="bx bx-shape-circle" aria-hidden="true"></i>Image classification</span>
+                                <span><i class="bx bx-filter-alt" aria-hidden="true"></i>Feature extraction</span>
+                                <span><i class="bx bx-video" aria-hidden="true"></i>Video analysis</span>
+                            </div>
+                        </details>
+                    </article>
                 </div>
             </div>
         </section>
+
+
+<!------------------ Projects ------------------>
+
+
         <section class="section min-h-screen py-20 px-4 sm:px-6 lg:px-8" id="projects">
             <div class="max-w-6xl mx-auto w-full">
                 <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-12">
                     <div>
                         <h2 class="text-4xl md:text-5xl font-bold font-bebas tracking-wider reveal">Featured Projects</h2>
-                        <p class="text-slate-400 max-w-2xl mt-3">A curated selection of AI, product, and full-stack work with strong visual polish and delivery focus.</p>
+                        <p class="text-slate-400 max-w-2xl mt-3">Selected work across applied AI, computer vision, and developer tools.</p>
                     </div>
-                    <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="text-sm px-5 py-3 border border-purple-500/40 rounded-full text-purple-200 hover:bg-purple-500/10 transition">View GitHub Profile</a>
+                    <a href="https://github.com/2100031988?tab=repositories" target="_blank" rel="noreferrer" class="text-sm px-5 py-3 border border-purple-500/40 rounded-full text-purple-200 hover:bg-purple-500/10 transition">View GitHub Profile</a>
                 </div>
-                <div class="grid gap-8 xl:grid-cols-2">
-                    <article class="project-card reveal">
-                        <div class="grid sm:grid-cols-2 gap-4 mb-6">
-                            <div class="overflow-hidden rounded-[1.75rem] border border-slate-700/60">
-                                <img src="img/ai_face_swapper.jpeg" alt="AI Face Swapper" />
-                            </div>
-                            <div class="overflow-hidden rounded-[1.75rem] border border-slate-700/60">
-                                <img src="img/portfolio1.jpeg" alt="Portfolio Showcase" />
-                            </div>
-                        </div>
+
+                <div class="project-tools" id="project-tools" hidden>
+                    <div class="project-filters" role="group" aria-label="Filter projects by category">
+                        <button class="project-filter is-active" type="button" data-project-filter="all" aria-pressed="true"><i class="bx bx-grid-alt" aria-hidden="true"></i>All <span>4</span></button>
+                        <button class="project-filter" type="button" data-project-filter="ai-vision" aria-pressed="false"><i class="bx bx-bulb" aria-hidden="true"></i>AI &amp; Vision <span>3</span></button>
+                        <button class="project-filter" type="button" data-project-filter="libraries" aria-pressed="false"><i class="bx bx-package" aria-hidden="true"></i>Libraries <span>1</span></button>
+                    </div>
+                    <label class="project-search">
+                        <i class="bx bx-search" aria-hidden="true"></i>
+                        <span class="sr-only">Search projects</span>
+                        <input id="project-search" type="search" placeholder="Search projects or tools" autocomplete="off">
+                        <kbd>/</kbd>
+                    </label>
+                    <p class="project-results" id="project-results" role="status" aria-live="polite">Showing all 4 projects</p>
+                </div>
+
+                <div class="grid gap-8 xl:grid-cols-2" id="project-grid">
+                    <article class="project-card reveal" data-project-category="ai-vision">
+                        <img class="project-card-image" src="project_section_images/ai_face_swapper.jpeg" alt="AI Face Swapper project preview" loading="lazy" decoding="async">
                         <div class="project-card-content">
                             <span class="text-purple-400 text-sm uppercase tracking-[0.2em]">AI & Product</span>
                             <h3 class="text-2xl font-bold text-white mt-4">AI Face Swapper</h3>
-                            <p class="text-slate-300 mt-3">A smart AI project blending computer vision, deep learning, and image processing to create realistic face swaps and video experiences.</p>
+                            <p class="text-slate-300 mt-3">A project built using computer vision to create realistic face swaps and video experiences.</p>
                             <div class="project-meta">
                                 <span class="project-badge">Python</span>
                                 <span class="project-badge">TensorFlow</span>
                                 <span class="project-badge">Computer Vision</span>
                             </div>
-                            <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 mt-5 text-purple-300 hover:text-white text-sm font-semibold">View Project <i class='bx bx-right-arrow-alt'></i></a>
+                            <a href="https://github.com/2100031988/AI-Face-Swapper-using-Celebrity" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 mt-5 text-purple-300 hover:text-white text-sm font-semibold">View Project <i class='bx bx-right-arrow-alt'></i></a>
                         </div>
                     </article>
-                    <article class="project-card reveal">
-                        <div class="grid sm:grid-cols-2 gap-4 mb-6">
-                            <div class="overflow-hidden rounded-[1.75rem] border border-slate-700/60">
-                                <img src="img/rent.jpeg" alt="Car Rental System" />
-                            </div>
-                            <div class="overflow-hidden rounded-[1.75rem] border border-slate-700/60">
-                                <img src="img/Electricty_bill_system.jpeg" alt="Electricity Billing System" />
-                            </div>
-                        </div>
+
+                    <article class="project-card reveal" data-project-category="ai-vision">
+                        <img class="project-card-image" src="project_section_images/autisium_detction.jpeg" alt="Autism Disorder Detection and Analysis project preview" loading="lazy" decoding="async">
                         <div class="project-card-content">
-                            <span class="text-blue-400 text-sm uppercase tracking-[0.2em]">Enterprise Tools</span>
-                            <h3 class="text-2xl font-bold text-white mt-4">Car Rental & Billing Systems</h3>
-                            <p class="text-slate-300 mt-3">Two scalable applications for rental bookings and client billing, built with clean management workflows and strong backend architecture.</p>
+                            <span class="text-blue-400 text-sm uppercase tracking-[0.2em]">Object Detection</span>
+                            <h3 class="text-2xl font-bold text-white mt-4">Autism Disorder Detection and Analysis</h3>
+                            <p class="text-slate-300 mt-3">A computer-vision project analyzing autism-related indicators; the project reports 98.09% classification accuracy.</p>
                             <div class="project-meta">
-                                <span class="project-badge">Java</span>
-                                <span class="project-badge">Spring</span>
-                                <span class="project-badge">SQL</span>
+                                <span class="project-badge">OpenCV</span>
+                                <span class="project-badge">TensorFlow</span>
+                                <span class="project-badge">YoloV5</span>
                             </div>
-                            <a href="https://github.com/2100031988/Car-Rental-System?utm_source=chatgpt.com" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 mt-5 text-blue-300 hover:text-white text-sm font-semibold">View Project <i class='bx bx-right-arrow-alt'></i></a>
+                            <a href="https://github.com/2100031988/Autism-Spectrum-Disorder-Detection-and-Analysis" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 mt-5 text-blue-300 hover:text-white text-sm font-semibold">View Project <i class='bx bx-right-arrow-alt'></i></a>
                         </div>
                     </article>
-                    <article class="project-card reveal">
-                        <div class="overflow-hidden rounded-[1.75rem] border border-slate-700/60 mb-6">
-                            <img src="img/portfolio1.jpeg" alt="Portfolio Showcase" />
-                        </div>
+
+                    <article class="project-card reveal" data-project-category="ai-vision">
+                        <img class="project-card-image" src="project_section_images/IOT_driver_drowisnesss.jpeg" alt="IoT Driver Drowsiness Detection project preview" loading="lazy" decoding="async">
                         <div class="project-card-content">
-                            <span class="text-pink-400 text-sm uppercase tracking-[0.2em]">Portfolio</span>
-                            <h3 class="text-2xl font-bold text-white mt-4">Portfolio Redesign</h3>
-                            <p class="text-slate-300 mt-3">A modern portfolio refresh focused on branded typography, responsive layout, and a premium project showcase.</p>
+                            <span class="text-pink-400 text-sm uppercase tracking-[0.2em]">Driver Monitoring</span>
+                            <h3 class="text-2xl font-bold text-white mt-4">IoT-Based Driver Drowsiness Detection</h3>
+                            <p class="text-slate-300 mt-3">Detects signs of driver drowsiness from eye closure and provides an alert.</p>
                             <div class="project-meta">
-                                <span class="project-badge">HTML</span>
-                                <span class="project-badge">CSS</span>
-                                <span class="project-badge">Tailwind</span>
+                                <span class="project-badge">Python</span>
+                                <span class="project-badge">OpenCV</span>
+                                <span class="project-badge">PyTorch</span>
                             </div>
-                            <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 mt-5 text-pink-300 hover:text-white text-sm font-semibold">View Project <i class='bx bx-right-arrow-alt'></i></a>
+                            <a href="https://github.com/2100031988/IoT-Driven-Drowsiness-Detection-System" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 mt-5 text-pink-300 hover:text-white text-sm font-semibold">View Project <i class='bx bx-right-arrow-alt'></i></a>
                         </div>
                     </article>
-                    <article class="project-card reveal">
-                        <div class="overflow-hidden rounded-[1.75rem] border border-slate-700/60 mb-6">
-                            <img src="img/ai_face_swapper.jpeg" alt="AI Workflow" />
-                        </div>
+                    <article class="project-card reveal" data-project-category="libraries">
+                        <img class="project-card-image" src="project_section_images/numcompute-stream-social-preview.png" alt="Numcompute Machine Learning Framework project preview" loading="lazy" decoding="async">
                         <div class="project-card-content">
-                            <span class="text-green-400 text-sm uppercase tracking-[0.2em]">AI Workflow</span>
-                            <h3 class="text-2xl font-bold text-white mt-4">Research & Automation</h3>
-                            <p class="text-slate-300 mt-3">Research-backed tools and automation workflows for speech AI and cloud-connected services designed for reliability and usability.</p>
+                            <span class="text-green-400 text-sm uppercase tracking-[0.2em]">Packages and Libraries</span>
+                            <h3 class="text-2xl font-bold text-white mt-4">Numcompute: Machine Learning Framework</h3>
+                            <p class="text-slate-300 mt-3">A machine-learning framework built with NumPy and OpenCV, inspired by NumPy's familiar API.</p>
                             <div class="project-meta">
-                                <span class="project-badge">AI</span>
-                                <span class="project-badge">Cloud</span>
-                                <span class="project-badge">Automation</span>
+                                <span class="project-badge">Python</span>
+                                <span class="project-badge">OpenCV</span>
+                                <span class="project-badge">NumPy</span>
                             </div>
-                            <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 mt-5 text-green-300 hover:text-white text-sm font-semibold">View Project <i class='bx bx-right-arrow-alt'></i></a>
+                            <a href="https://test.pypi.org/project/numcompute/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 mt-5 text-green-300 hover:text-white text-sm font-semibold">View Project <i class='bx bx-right-arrow-alt'></i></a>
                         </div>
                     </article>
                 </div>
+                <p class="project-empty-state" id="project-empty-state" hidden>No projects match that search. Try another title, tool, or category.</p>
             </div>
         </section>
+
+
+<!------------------ Achievements ------------------>
+
+
         <section class="section min-h-screen py-20 px-4 sm:px-6 lg:px-8" id="achievements">
             <div class="max-w-6xl mx-auto w-full">
                 <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-12">
                     <div>
+                        <span class="achievement-kicker">Beyond the build</span>
                         <h2 class="text-4xl md:text-5xl font-bold font-bebas tracking-wider reveal">Achievements</h2>
-                        <p class="text-slate-400 max-w-2xl mt-3">Proof points from research, certifications, and project delivery.</p>
+                        <p class="text-slate-400 max-w-2xl mt-3">Research, credentials, community, and the teams that shaped the work.</p>
                     </div>
-                    <span class="text-slate-400 text-sm">Strong credentials for graduate roles.</span>
+                    <span class="text-slate-400 text-sm">A record of learning and contribution.</span>
                 </div>
-                <div class="grid gap-8 lg:grid-cols-3">
-                    <div class="achievement-card reveal">
-                        <span class="text-pink-400 uppercase tracking-[0.2em] text-xs">Publication</span>
+
+                <div class="achievement-grid">
+                    <article class="achievement-card achievement-card--feature reveal">
+                        <div class="achievement-card-heading">
+                            <span class="achievement-label text-pink-400">Publication</span>
+                            <img class="achievement-visual achievement-visual--image" src="certifications_achievements_images/research-paper-art.svg" alt="Illustration of a research paper and audio waveform" loading="lazy" decoding="async">
+                        </div>
                         <h3 class="text-3xl font-bold text-white mt-4">Speech Recognition Paper</h3>
                         <p class="text-slate-300 mt-4">Published research on noisy-environment speech recognition, demonstrating AI problem solving and academic depth.</p>
-                        <a href="https://drive.google.com/file/d/1MRYvuQL0KGhP8kDQLIszbwMC7oBQliXo/view" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 mt-5 text-purple-300 hover:text-purple-100 text-sm font-semibold">Read Publication <i class='bx bx-link-external'></i></a>
-                    </div>
-                    <div class="achievement-card reveal">
-                        <span class="text-purple-400 uppercase tracking-[0.2em] text-xs">Certifications</span>
-                        <h3 class="text-3xl font-bold text-white mt-4">4+ Industry Badges</h3>
-                        <ul class="text-slate-300 mt-4 space-y-2">
+                        <a href="https://drive.google.com/file/d/1MRYvuQL0KGhP8kDQLIszbwMC7oBQliXo/view" target="_blank" rel="noreferrer" class="achievement-link">Read publication <i class="bx bx-link-external"></i></a>
+                    </article>
+
+                    <article class="achievement-card achievement-card--certifications reveal">
+                        <div class="achievement-card-heading">
+                            <span class="achievement-label text-purple-300">Global Certifications</span>
+                            <div class="achievement-visual achievement-visual--certs" aria-label="Python Institute certificate preview">
+                                <img src="certifications_achievements_images/pcap.png" alt="Python Institute certified associate certificate" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mt-4">Industry Credentials</h3>
+                        <ul class="achievement-list">
                             <li>Red Hat Enterprise App Developer</li>
                             <li>AWS Cloud Practitioner</li>
                             <li>TensorFlow Developer</li>
                             <li>Python Certified Associate</li>
+                            <li>Salesforce AI Associate</li>
+                            <li>Wipro Java Talent Next</li>
                         </ul>
-                    </div>
-                    <div class="achievement-card reveal">
-                        <span class="text-blue-400 uppercase tracking-[0.2em] text-xs">Competitions</span>
-                        <h3 class="text-3xl font-bold text-white mt-4">Club & Tech Competitions</h3>
-                        <p class="text-slate-300 mt-4">Active participant in coding competitions, technical quizzes, and team-based problem solving.</p>
-                    </div>
+                        <a href="https://drive.google.com/file/d/1U3yNKiulxg6gXVRj-E156wL3wWObsXuO/view?usp=sharing" target="_blank" rel="noreferrer" class="achievement-link">View certification <i class="bx bx-link-external"></i></a>
+                    </article>
+
+                    <article class="achievement-card achievement-card--competition reveal">
+                        <div class="achievement-card-heading">
+                            <span class="achievement-label text-blue-300">Competitions</span>
+                            <img class="achievement-visual achievement-visual--image" src="certifications_achievements_images/tech-competition-art.svg" alt="Illustration of a coding challenge and trophy" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mt-4">Club &amp; Tech Competitions</h3>
+                        <p class="text-slate-300 mt-3">Coding competitions, technical quizzes, and team-based problem solving.</p>
+                        <a href="https://drive.google.com/file/d/1EyUcwuMlG8UO6sG-apCjkFx9VXBDAUwZ/view?usp=sharing" target="_blank" rel="noreferrer" class="achievement-link">View certificate <i class="bx bx-link-external"></i></a>
+                    </article>
+
+                    <article class="achievement-card achievement-card--soccer reveal">
+                        <div class="achievement-card-heading">
+                            <span class="achievement-label text-green-300">Sport</span>
+                            <img class="achievement-visual achievement-visual--image" src="certifications_achievements_images/soccer-club-art.svg" alt="Illustration of a soccer ball on a pitch" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mt-4">Adelaide University Soccer Club</h3>
+                        <p class="text-slate-300 mt-3">Playing with the university team helps me stay active, focused, and connected with teammates.</p>
+                    </article>
+
+                    <article class="achievement-card achievement-card--fintech reveal">
+                        <div class="achievement-card-heading">
+                            <span class="achievement-label text-yellow-300">Recognition</span>
+                            <img class="achievement-visual achievement-visual--image" src="certifications_achievements_images/Fintech.png" alt="Fintech Council of India professional certificate" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mt-4">Fintech Council Member Award</h3>
+                        <p class="text-slate-300 mt-3">Recognised for contribution and involvement in the fintech community.</p>
+                        <a href="https://drive.google.com/file/d/1aQVFQcWaphliDaf_2L7_ypxIX6gXOArf/view?usp=sharing" target="_blank" rel="noreferrer" class="achievement-link">View certificate <i class="bx bx-link-external"></i></a>
+                    </article>
+
+                    <article class="achievement-card achievement-card--community reveal">
+                        <div class="achievement-card-heading">
+                            <span class="achievement-label text-orange-300">Community</span>
+                            <img class="achievement-visual achievement-visual--image" src="certifications_achievements_images/community-volunteer-art.svg" alt="Illustration of people coming together in a community" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mt-4">Mosaic Volunteer</h3>
+                        <p class="text-slate-300 mt-3">Contributed to the Adelaide community while developing teamwork and communication skills.</p>
+                        <a href="https://drive.google.com/file/d/1oXaw3qTWWJRJhtAgQHzetu66qSyc2Ojg/view?usp=sharing" target="_blank" rel="noreferrer" class="achievement-link">View certificate <i class="bx bx-link-external"></i></a>
+                    </article>
                 </div>
             </div>
         </section>
+
+
+<!------------------ Contact ------------------>
+
+
         <section class="section min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8" id="contact">
-            <div class="max-w-4xl mx-auto w-full">
-                <h2 class="text-4xl md:text-5xl font-bold font-bebas tracking-wider mb-12 reveal">Get In Touch</h2>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div class="reveal space-y-8">
-                        <p class="text-lg text-slate-300 leading-relaxed">
-                            Have a project in mind? Share your brief below and I’ll respond with a plan and next steps within 24 hours.
-                        </p>
-                        <div class="space-y-6">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                    <i class='bx bxs-envelope text-purple-400'></i>
-                                </div>
+            <div class="contact-shell max-w-6xl mx-auto w-full">
+                <div class="contact-heading reveal">
+                    <span class="contact-eyebrow">Start a conversation</span>
+                    <h2 class="text-4xl md:text-5xl font-bold font-bebas tracking-wider">Get In Touch</h2>
+                </div>
+                <div class="contact-layout">
+                    <div class="contact-copy reveal">
+                        <p class="contact-intro">Have a project, research idea, or opportunity in mind? Send a note and tell me what you’re working on.</p>
+                        <div class="contact-details">
+                            <div class="contact-detail">
+                                <span class="contact-detail-icon contact-detail-icon--mint"><i class='bx bxs-envelope'></i></span>
                                 <div>
-                                    <h3 class="font-semibold text-white mb-1">Email</h3>
-                                    <a href="mailto:sabyakumar2003@gmail.com" class="text-slate-300 hover:text-purple-400 transition">
-                                        sabyakumar2003@gmail.com
-                                    </a>
+                                    <h3>Email</h3>
+                                    <a href="mailto:sabyakumar2003@gmail.com">sabyakumar2003@gmail.com</a>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-pink-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                    <i class='bx bxs-phone text-pink-400'></i>
-                                </div>
+                            <div class="contact-detail">
+                                <span class="contact-detail-icon contact-detail-icon--blue"><i class='bx bxl-linkedin'></i></span>
                                 <div>
-                                    <h3 class="font-semibold text-white mb-1">Phone</h3>
-                                    <a href="tel:+1234567890" class="text-slate-300 hover:text-pink-400 transition">
-                                        +1 (234) 567-890
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                    <i class='bx bxl-linkedin text-blue-400'></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-white mb-1">LinkedIn</h3>
-                                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="text-slate-300 hover:text-blue-400 transition">
-                                        Visit My Profile
-                                    </a>
+                                    <h3>LinkedIn</h3>
+                                    <a href="https://www.linkedin.com/in/sabyasachi-kumar-5a423b226/" target="_blank" rel="noreferrer">Connect with me</a>
                                 </div>
                             </div>
                         </div>
+                        <p class="contact-note"><span></span> Usually the quickest way to reach me is by email.</p>
                     </div>
                     <div class="reveal">
-                        <form id="contact-form" class="space-y-4 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 backdrop-blur-xl rounded-2xl p-8">
+                        <form id="contact-form" class="contact-form-panel space-y-4">
                             <div>
                                 <label for="name" class="block text-sm font-semibold text-slate-300 mb-2">Name</label>
                                 <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20 transition" placeholder="Your name" />
@@ -450,22 +609,24 @@ const status = "building"</code></pre>
                 </div>
             </div>
         </section>
+
+
+<!------------------ Footer ------------------>
+
+
     </main>
     <footer class="border-t border-slate-700/50 bg-slate-950/50 backdrop-blur py-8 px-4 sm:px-6 lg:px-8">
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="text-slate-400 text-sm">&copy; 2026 Sabyasachi Kumar. All rights reserved.</div>
                 <div class="flex gap-6 items-center">
-                    <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-purple-400 transition social-link">
+                    <a href="https://github.com/2100031988" target="_blank" rel="noreferrer" aria-label="GitHub profile" class="text-slate-400 hover:text-purple-400 transition social-link">
                         <i class='bx bxl-github text-2xl'></i>
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-blue-400 transition social-link">
+                    <a href="https://www.linkedin.com/in/sabyasachi-kumar-5a423b226/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile" class="text-slate-400 hover:text-blue-400 transition social-link">
                         <i class='bx bxl-linkedin text-2xl'></i>
                     </a>
-                    <a href="https://twitter.com" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-cyan-400 transition social-link">
-                        <i class='bx bxl-twitter text-2xl'></i>
-                    </a>
-                    <a href="https://buymeacoffee.com/sabya_kumar" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-yellow-400 transition social-link">
+                    <a href="https://buymeacoffee.com/sabya_kumar" target="_blank" rel="noreferrer" aria-label="Buy me a coffee" class="text-slate-400 hover:text-yellow-400 transition social-link">
                         <i class='bx bxl-buymeacoffee text-2xl'></i>
                     </a>
                 </div>

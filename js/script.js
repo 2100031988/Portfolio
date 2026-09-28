@@ -102,6 +102,207 @@ document.addEventListener('DOMContentLoaded', () => {
         revealElements.forEach(element => element.classList.add('is-visible'));
     }
 
+    // ===== GITHUB PROFILE SNAPSHOT =====
+    const githubRepositoryList = document.getElementById('github-repository-list');
+    const githubSyncStatus = document.getElementById('github-sync-status');
+
+    if (githubRepositoryList && githubSyncStatus) {
+        const githubUsername = '2100031988';
+        const cacheKey = 'portfolio.github-snapshot.v1';
+        const cacheDuration = 15 * 60 * 1000;
+        const setSyncStatus = (message, state) => {
+            githubSyncStatus.textContent = message;
+            githubSyncStatus.parentElement.classList.toggle('is-current', state === 'current');
+            githubSyncStatus.parentElement.classList.toggle('is-error', state === 'error');
+        };
+
+        const formatRepositoryDate = value => {
+            const date = new Date(value);
+            if (Number.isNaN(date.getTime())) return 'Recently updated';
+            return `Updated ${new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric' }).format(date)}`;
+        };
+
+        const renderGitHubSnapshot = snapshot => {
+            const avatar = document.getElementById('github-avatar');
+            const displayName = document.getElementById('github-display-name');
+            const repositoryCount = document.getElementById('github-repo-count');
+            const followerCount = document.getElementById('github-follower-count');
+            const lastUpdated = document.getElementById('github-last-updated');
+
+            if (avatar && snapshot.profile.avatar_url) avatar.src = snapshot.profile.avatar_url;
+            if (displayName) displayName.textContent = snapshot.profile.name || snapshot.profile.login || githubUsername;
+            if (repositoryCount) repositoryCount.textContent = Number(snapshot.profile.public_repos || 0).toLocaleString();
+            if (followerCount) followerCount.textContent = Number(snapshot.profile.followers || 0).toLocaleString();
+
+            githubRepositoryList.replaceChildren();
+            const repositories = snapshot.repositories.filter(repository => repository.fork !== true && repository.archived !== true).slice(0, 3);
+
+            if (repositories.length === 0) {
+                const emptyMessage = document.createElement('li');
+                emptyMessage.className = 'github-repository-placeholder';
+                emptyMessage.textContent = 'No recent repositories to show.';
+                githubRepositoryList.append(emptyMessage);
+            }
+
+            repositories.forEach(repository => {
+                const item = document.createElement('li');
+                const link = document.createElement('a');
+                const name = document.createElement('span');
+                const metadata = document.createElement('span');
+
+                link.className = 'github-repository-link';
+                link.href = repository.html_url;
+                link.target = '_blank';
+                link.rel = 'noreferrer';
+                link.setAttribute('aria-label', `${repository.name} repository on GitHub`);
+                name.className = 'github-repository-name';
+                name.textContent = repository.name;
+                metadata.className = 'github-repository-meta';
+                metadata.textContent = [repository.language || 'Repository', formatRepositoryDate(repository.pushed_at || repository.updated_at)].join(' · ');
+
+                link.append(name, metadata);
+                item.append(link);
+                githubRepositoryList.append(item);
+            });
+
+            if (lastUpdated && snapshot.fetchedAt) {
+                lastUpdated.textContent = `Synced ${new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' }).format(new Date(snapshot.fetchedAt))}`;
+            }
+        };
+
+        const readCachedSnapshot = () => {
+            try {
+                const cached = JSON.parse(localStorage.getItem(cacheKey));
+                return cached && cached.profile && Array.isArray(cached.repositories) ? cached : null;
+            } catch (error) {
+                return null;
+            }
+        };
+
+        let cachedSnapshot = readCachedSnapshot();
+        if (cachedSnapshot) {
+            renderGitHubSnapshot(cachedSnapshot);
+            setSyncStatus('Cached profile', 'current');
+        }
+
+        const refreshGitHubSnapshot = async () => {
+            if (document.hidden) return;
+
+            try {
+                const [profileResponse, repositoriesResponse] = await Promise.all([
+                    fetch(`https://api.github.com/users/${githubUsername}`, { headers: { Accept: 'application/vnd.github+json' } }),
+                    fetch(`https://api.github.com/users/${githubUsername}/repos?type=owner&sort=updated&per_page=100`, { headers: { Accept: 'application/vnd.github+json' } })
+                ]);
+
+                if (!profileResponse.ok || !repositoriesResponse.ok) throw new Error('GitHub profile request failed.');
+
+                const [profile, repositories] = await Promise.all([profileResponse.json(), repositoriesResponse.json()]);
+                if (!profile || !Array.isArray(repositories)) throw new Error('GitHub returned an unexpected response.');
+
+                const snapshot = {
+                    profile: {
+                        login: profile.login,
+                        name: profile.name,
+                        avatar_url: profile.avatar_url,
+                        public_repos: profile.public_repos,
+                        followers: profile.followers
+                    },
+                    repositories: repositories.map(repository => ({
+                        name: repository.name,
+                        html_url: repository.html_url,
+                        language: repository.language,
+                        pushed_at: repository.pushed_at,
+                        updated_at: repository.updated_at,
+                        fork: repository.fork,
+                        archived: repository.archived
+                    })),
+                    fetchedAt: Date.now()
+                };
+
+                renderGitHubSnapshot(snapshot);
+                cachedSnapshot = snapshot;
+                setSyncStatus('Live from GitHub', 'current');
+                try {
+                    localStorage.setItem(cacheKey, JSON.stringify(snapshot));
+                } catch (error) {
+                    // Keep the live snapshot usable when browser storage is unavailable.
+                }
+            } catch (error) {
+                setSyncStatus(cachedSnapshot ? 'Showing saved data' : 'GitHub unavailable', 'error');
+                if (!cachedSnapshot) {
+                    githubRepositoryList.replaceChildren();
+                    const fallbackMessage = document.createElement('li');
+                    fallbackMessage.className = 'github-repository-placeholder';
+                    fallbackMessage.textContent = 'Repository data is temporarily unavailable.';
+                    githubRepositoryList.append(fallbackMessage);
+                }
+            }
+        };
+
+        if (!cachedSnapshot || Date.now() - cachedSnapshot.fetchedAt >= cacheDuration) {
+            refreshGitHubSnapshot();
+        }
+        window.setInterval(refreshGitHubSnapshot, cacheDuration);
+    }
+
+    // ===== PROJECT SEARCH AND FILTERS =====
+    const projectTools = document.getElementById('project-tools');
+    const projectGrid = document.getElementById('project-grid');
+    const projectSearch = document.getElementById('project-search');
+
+    if (projectTools && projectGrid && projectSearch) {
+        const projectCards = [...projectGrid.querySelectorAll('.project-card')];
+        const filterButtons = [...projectTools.querySelectorAll('[data-project-filter]')];
+        const resultCount = document.getElementById('project-results');
+        const emptyState = document.getElementById('project-empty-state');
+        let activeProjectCategory = 'all';
+
+        const updateVisibleProjects = () => {
+            const searchTerm = projectSearch.value.trim().toLocaleLowerCase();
+            let visibleCount = 0;
+
+            projectCards.forEach(card => {
+                const matchesCategory = activeProjectCategory === 'all' || card.dataset.projectCategory === activeProjectCategory;
+                const matchesSearch = card.textContent.toLocaleLowerCase().includes(searchTerm);
+                const isVisible = matchesCategory && matchesSearch;
+
+                card.hidden = !isVisible;
+                if (isVisible) visibleCount += 1;
+            });
+
+            if (resultCount) {
+                resultCount.textContent = visibleCount === projectCards.length && searchTerm === ''
+                    ? `Showing all ${projectCards.length} projects`
+                    : `Showing ${visibleCount} of ${projectCards.length} projects`;
+            }
+            if (emptyState) emptyState.hidden = visibleCount > 0;
+        };
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                activeProjectCategory = button.dataset.projectFilter;
+                filterButtons.forEach(filterButton => {
+                    const isActive = filterButton === button;
+                    filterButton.classList.toggle('is-active', isActive);
+                    filterButton.setAttribute('aria-pressed', String(isActive));
+                });
+                updateVisibleProjects();
+            });
+        });
+
+        projectSearch.addEventListener('input', updateVisibleProjects);
+        projectTools.hidden = false;
+
+        document.addEventListener('keydown', event => {
+            const target = event.target;
+            const isTyping = target instanceof HTMLElement && (target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName));
+            if (event.key === '/' && !isTyping && !event.ctrlKey && !event.metaKey && !event.altKey) {
+                event.preventDefault();
+                projectSearch.focus();
+            }
+        });
+    }
+
     // ===== BACK TO TOP BUTTON =====
     if (backToTop) {
         window.addEventListener('scroll', () => {

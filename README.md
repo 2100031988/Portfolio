@@ -1,104 +1,100 @@
-# Sabyasachi Kumar Portfolio
+# Sabyasachi Kumar | Portfolio
 
-A modern portfolio with a production-style contact pipeline.
+A responsive, single-page developer portfolio presenting Sabyasachi Kumar's background, skills, projects, credentials, and contact options.
 
-## What's Included
+- **Live site:** [sabyakumar.me](https://sabyakumar.me)
+- **Hosting model:** Static website configured for GitHub Pages with a custom domain
+- **Repository type:** HTML, CSS, browser-side JavaScript, and static assets; no application server or build step is included
 
-- Responsive dashboard-style portfolio UI
-- Projects with image cards + category filters
-- Contact form with:
-  - OTP verification
-  - Honeypot anti-bot field
-  - Rate limiting
-  - Optional image links in submissions
-- SQLite database storage for all leads
-- Professional reference IDs for each request
-- Branded HTML acknowledgement emails
-- Admin page to view and export leads as CSV
-- Newsletter subscription storage
-- Right-side React + Material UI chatbot assistant
+## Overview
 
-## Framework/Library Upgrade
+The page is organized into six sections:
 
-This project now includes CDN integrations for:
+1. **Home** — introduction, CV link, and a short portfolio snapshot
+2. **About** — education, work experience, and strengths
+3. **Skills** — languages, machine-learning libraries, and tools
+4. **Projects** — selected work with preview images, repository links, category filters, and keyword search
+5. **Achievements** — research, certifications, competitions, sport, and community involvement
+6. **Contact** — email and LinkedIn links plus a contact form
 
-- Tailwind CSS
-- Bootstrap
-- React
-- Material UI
+The page uses responsive layouts and local project/credential artwork. It includes browser-side interactions through `js/script.js`; this repository does not provide a server-side API or database.
 
-## Setup
+## Technology
 
-1. Install dependencies
+- **Markup:** HTML5
+- **Styling:** Tailwind CSS via CDN, with site-specific rules in `css/style.css`
+- **Icons:** Boxicons and Devicon via CDN
+- **Fonts:** Space Grotesk and Bebas Neue via Google Fonts
+- **Contact integration:** EmailJS Browser SDK is loaded by the page; actual delivery depends on the existing client-side configuration and the EmailJS service
+- **Hosting:** GitHub Pages; `CNAME` identifies the custom domain
 
-```bash
-npm install
-```
+No React, Material UI, Node.js application server, admin dashboard, newsletter API, OTP service, or SQLite database is included in this repository.
 
-2. Create env file
+## Run Locally
+
+There are no package dependencies or build commands. Open `index.html` directly in a browser, or start a simple static server from the repository root:
 
 ```bash
-cp .env.example .env
+python3 -m http.server 8000
 ```
 
-3. Update `.env`
+Then visit <http://localhost:8000>. Internet access is needed for the page's CDN-hosted styles, icons, fonts, and contact integration.
 
-```env
-PORT=3000
-ADMIN_TOKEN=change-this-admin-token
+## Deploy
 
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_SECURE=false
-SMTP_USER=your-email@example.com
-SMTP_PASS=your-app-password
-OWNER_EMAIL=sabyakumar2003@gmail.com
-```
+The repository is prepared for GitHub Pages and contains a `CNAME` for `sabyakumar.me`.
 
-4. Start server
+1. Push the site files to the configured GitHub repository.
+2. In the repository's **Settings → Pages**, select the publishing branch and the repository root as the source.
+3. Configure the custom domain as `sabyakumar.me` if it is not already set, and ensure the domain's DNS records point to GitHub Pages.
+4. Allow GitHub Pages and DNS changes to finish propagating, then verify the live site and certificate links.
 
-```bash
-npm start
-```
+`robots.txt` and `sitemap.xml` are included for crawler discovery. Update the sitemap's `lastmod` value when the published site changes.
 
-5. Open site
+## Project Structure
 
 ```text
-http://localhost:3000
+.
+├── index.html
+├── favicon.svg
+├── CNAME
+├── robots.txt
+├── sitemap.xml
+├── README.md
+├── css/
+│   ├── style.css
+│   ├── bootstrap.min.css
+│   └── fontawesome.min.css
+├── js/
+│   └── script.js
+├── project_section_images/
+│   ├── ai_face_swapper.jpeg
+│   ├── autisium_detction.jpeg
+│   ├── IOT_driver_drowisnesss.jpeg
+│   └── numcompute-stream-social-preview.png
+├── certifications_achievements_images/
+│   ├── Fintech.png
+│   ├── Redhat.png
+│   ├── pcap.png
+│   └── achievement illustration SVGs
+├── license_codeofconduct/
+│   ├── LICENSE
+│   ├── CODE_OF_CONDUCT.md
+│   └── SECURITY.md
+└── .github/
+    └── FUNDING.yml
 ```
 
-6. Open admin page
+The Bootstrap and Font Awesome stylesheets are present in `css/`; the current page loads Tailwind from its CDN and uses its own stylesheet.
 
-```text
-http://localhost:3000/admin.html
-```
+## Privacy and Personal Materials
 
-## SMTP (What It Is)
+The page publishes personal and professional information, including a name, contact details, education and employment history, profile links, CV, certificates, and portfolio content. The contact form asks visitors for their name, email address, subject, and message. Do not submit sensitive information through the form. Contact-form processing is subject to the third-party EmailJS service and its privacy terms.
 
-SMTP is the email server configuration that lets your app send real emails.
-Without SMTP, form data is still saved to database, but acknowledgement emails cannot be sent.
+**Permission notice:** The Apache license for reusable source code does not grant permission to copy, publish, distribute, modify, or use the owner's identity or personal materials for another purpose. This includes the owner's name, likeness, contact information, CV, biography, employment or education details, certificates, certificate scans, personal photographs, original portfolio text, and other personal or credential assets. Obtain the owner's prior written consent before using those materials, unless a separate written license or applicable law permits the use.
 
-For Gmail:
+This README records the owner's intended boundary between code and personal materials. For a legally enforceable asset-by-asset licensing policy, keep the scope consistent with the notices in `license_codeofconduct/LICENSE` and consult a qualified legal professional.
 
-- Enable 2-factor authentication
-- Generate an App Password
-- Use that App Password as `SMTP_PASS`
+## License and Repository Policies
 
-## APIs
-
-- `POST /api/otp/request` - sends or returns dev OTP
-- `POST /api/contact` - verifies OTP, saves lead, sends emails
-- `POST /api/newsletter` - saves newsletter subscriber
-- `GET /api/admin/leads` - admin JSON leads list (requires token)
-- `GET /api/admin/leads/export.csv` - admin CSV export (requires token)
-- `GET /health` - service health
-
-## Security Notes
-
-- Honeypot rejects bot-like submissions
-- Rate limit prevents contact endpoint abuse
-- Admin APIs require `ADMIN_TOKEN`
-
-## License
-
-MIT
+The included license text is **Apache License 2.0**, located at [`license_codeofconduct/LICENSE`](license_codeofconduct/LICENSE). It is not MIT. Review the permission notice above before reusing any personal or credential materials. Repository conduct and security guidance are in [`license_codeofconduct/CODE_OF_CONDUCT.md`](license_codeofconduct/CODE_OF_CONDUCT.md) and [`license_codeofconduct/SECURITY.md`](license_codeofconduct/SECURITY.md).
